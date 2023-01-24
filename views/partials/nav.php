@@ -1,10 +1,12 @@
-<nav class=" flex justify-between  border-gray-200 p-6    "
+<nav class=" flex justify-between  border-gray-200   p-5   "
         style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
         <div class="nav-left mt-3 ">
             <div class="flex flex-col  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                <img class="h-10 w-10 -mt-2.5 rounded-full" src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/315983293_498278652253268_5612582038791346935_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeElhF2udQExBL3HFp1d0HAJB7bHFSYnIyEHtscVJicjIaG3Xp4ISYIU3Pe0yAgcYnmZanYnlWJ1nPjtQbsfBMK3&_nc_ohc=YMbEj77hf0YAX9GT0Ud&_nc_ht=scontent.fpnh19-1.fna&oh=00_AfCFnzZKVO9PgIqWatZ_zL03QHrxTBQkJ28tlkFR5iyWTQ&oe=63D46ED4">
+                <a href="" class="logo p-0 m-0">
+                    <img class="h-25 w-28 -mt-7 -mb-5 " src="assets/logo/cinema-logo.png">
+                </a>
                 <a href="#"
-                    class="block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
+                    class="  hover:underline-offset-1  hover:underline  block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
                     aria-current="page">Home</a>
                 <a href="#"
                     class="block py-2 pr-4 pl-3 text-white border-b border-white hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About
@@ -16,9 +18,10 @@
         </div>
         <div class="nav-right  mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
             <div class="btn m-0 flex  ">
-                <form action="#" method="post" class="relative mx-auto text-gray-600 lg:block mr-8">
+                <!-- <input type="text" name="" id="" placeholder="search..." class="m-0 py-2 pr-4 mr-10 pl-3 w-80 rounded-full "> -->
+                <form action="#" method="post" class=" relative mx-auto text-gray-600 lg:block mr-8">
                     <input
-                        class="border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm focus:outline-none"
+                        class=" border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm outline-white hover:outline-yellow-300"
                         type="text" name="search" id="search" placeholder="Search" autocomplete="off">
                     <button type="submit" name="submit" value="search" class="absolute right-0 top-0 mt-3 mr-3">
                         <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1"

@@ -7,7 +7,6 @@ function createPost(string $title, string $description) : bool
     $statement->execute([
         ':title' => $title,
         ':description' => $description
-
     ]);
 
     return $statement->rowCount() > 0;
