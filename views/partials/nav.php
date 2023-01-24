@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="nav-right mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
-            <div class="btn m-0 flex  ">
+            <div class="btn m-0 flex">
                 <form action="#" method="post" class="relative mx-auto text-gray-600 lg:block mr-8">
                     <input
                         class="border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm focus:outline-none"
