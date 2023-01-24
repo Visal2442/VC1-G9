@@ -33,7 +33,7 @@
                                     <p class="ml-3">1h:25mn</p>
                                 </div>
                                 <div class=" flex flex-col pt-6 gap-3 w-auto">
-                                    <button class=" px-10 py-1 hover:bg-white hover:text-black text-center rounded-lg text-white border-solid border-2 border-white-600 ">MORE INFO</button>
+                                    <button class=" px-10 py-1 hover:bg-white hover:text-black text-center rounded-lg text-white border-solid border-2 border-white-600 "><a href="/detail">MORE INFO</a></button>
                                     <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded-lg bg-yellow-500   text-black-500">BUY NOW</button>
                                 </div>
                             </div>

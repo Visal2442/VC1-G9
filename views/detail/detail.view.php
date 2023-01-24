@@ -1,11 +1,8 @@
 
-<?php  require '../partials/head.php';?>
-<?php  require '../partials/nav.php';?>
+<?php  require 'views/partials/head.php';?>
+<?php  require 'views/partials/nav.php';?>
 
 
-<!-- <h1 class='pl-24  pr-24'>
-
-</h1> -->
 <div class=' flex justify-center flex-row text-white'>
     <img src="https://www.telugubulletin.com/wp-content/uploads/schema-and-structured-data-for-wp/Avatar-2-movie-on-hotstar-1200x720.jpg" class=" w-96 mt-20 h-96" alt="..." />
     <div class="  mt-20 flex flex-col gap-3 ml-20">
@@ -23,4 +20,4 @@
 <div class="pl-28 pt-8 pb-8">
     <iframe class=" h-96 w-11/12"  src="https://www.youtube.com/embed/a8Gx8wiNbs8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<?php  require '../partials/footer.php';?>
+<?php  require 'views/partials/footer.php';?>
