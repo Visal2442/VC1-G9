@@ -126,9 +126,9 @@
 
             <!-- Slider indicators -->
             <div class="flex absolute gap-10 top-0 mt-5  mb-80 left-1/2 z-30 space-x-3 -translate-x-1/2">
-                <button type="button" class="p-1 bg-yellow-200" aria-current="false" data-carousel-slide-to="0">All Shows</button>
-                <button type="button" class="p-1  rounded" aria-current="false"  data-carousel-slide-to="1">Movies</button>
-                <button type="button" class="p-1  rounded " aria-current="false" data-carousel-slide-to="2">Music</button>
+                <button type="button" class="p-1  bg-yellow-500 rounded" aria-current="false" data-carousel-slide-to="0">All Shows</button>
+                <button type="button" class="p-1 bg-yellow-500 rounded" aria-current="false"  data-carousel-slide-to="1">Movies</button>
+                <button type="button" class="p-1 bg-yellow-500 rounded " aria-current="false" data-carousel-slide-to="2">Music</button>
             </div>
             <!-- Slider controls -->
           </div>
