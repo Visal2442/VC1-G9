@@ -9,10 +9,7 @@
             <!-- Item 1 -->
             <div class="hidden mt-20 p-6 duration-700 ease-in-out" data-carousel-item style="background-image: linear-gradient(90deg,#041826,#082336,#143954,#093351,#092F4A,#072840,#05253A);">
                 <div class="gap-6 flex flex-wrap h-auto overflow-hidden">
-                    
-                 
                   
-                
                     <div class="flex flex-col justify-center">
                       <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
                             <div class="w-52 h-auto">

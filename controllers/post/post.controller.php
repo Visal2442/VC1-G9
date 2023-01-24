@@ -1,6 +1,5 @@
 <?php
 
-$heading = "Post Page";
 
 require 'models/post.model.php';
 
