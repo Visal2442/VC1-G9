@@ -1,7 +1,7 @@
 <?php
 
-$hostname = "localhost";
-$database = "demo_db";
+$hostname = "127.0.0.1";
+$database = "booking_ticket_db";
 $username = "root";
 $password = "";
 
