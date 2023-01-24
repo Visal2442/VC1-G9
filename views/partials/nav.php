@@ -1,4 +1,4 @@
-<nav class=" flex justify-between  border-gray-200   p-6    "
+<nav class=" flex justify-between  border-gray-200 p-6    "
         style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
         <div class="nav-left mt-3 ">
             <div class="flex flex-col  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
