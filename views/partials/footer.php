@@ -1,6 +1,5 @@
 
 
-</body>
 <footer class="fiex p-6 bg-[#071D2E] sm:items-center" >
         <div class="md:flex md:justify-between ">
             <div class="ml-16">
@@ -46,4 +45,5 @@
             </div>
         </div>
     </footer>
+    </body>
 </html>
