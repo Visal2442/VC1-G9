@@ -3,7 +3,7 @@
         <div class="nav-left mt-3 ">
             <div class="flex flex-col  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 <img class="h-10 w-10 -mt-2.5 rounded-full" src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/315983293_498278652253268_5612582038791346935_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeElhF2udQExBL3HFp1d0HAJB7bHFSYnIyEHtscVJicjIaG3Xp4ISYIU3Pe0yAgcYnmZanYnlWJ1nPjtQbsfBMK3&_nc_ohc=YMbEj77hf0YAX9GT0Ud&_nc_ht=scontent.fpnh19-1.fna&oh=00_AfCFnzZKVO9PgIqWatZ_zL03QHrxTBQkJ28tlkFR5iyWTQ&oe=63D46ED4">
-                <a href="#" class="block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Home</a>
+                <a href="/" class="block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Home</a>
                 <a href="#" class="block py-2 pr-4 pl-3 text-white border-b border-white hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
                 <a href="#" class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
             </div>
