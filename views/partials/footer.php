@@ -1,15 +1,15 @@
 
 
 </body>
-<footer class="flex p-6 bg-[#071D2E] sm:items-center" >
+<footer class="fiex justify-evenly p-6 bg-[#071D2E] sm:items-center">
         <div class="md:flex md:justify-between ">
-            <div class="ml-16">
+            <div class="ml-16 ">
                 <h1 class="font-bold text-white mb-1">Contact us</h1>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/9068/9068877.png" alt="" class="h-6 w-6 m-0.5">
                     <p class="text-white ml-5">booking.ticket@gmail.com </p>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/3059/3059590.png" alt="" class="h-6 w-6 m-0.5">
                     <p class="text-white ml-5">+855 67 340 156</p>
                 </div>
@@ -17,24 +17,24 @@
             </div>
             <div class="">
                 <h1 class="font-bold text-white mb-1 ">Social media</h1>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/145/145802.png" alt="" class="h-6 w-6 m-0.5 "> 
                     <p class="text-white  ml-5">Facebook</p>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png" alt="" class="h-6 w-6  m-0.5"> 
                     <p class="text-white ml-5">Telegram</p> 
                 </div>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/4494/4494477.png" alt="" class="h-6 w-6 m-0.5">
                     <p class="text-white ml-5">Twitter</p> 
                 </div>
-                <div class="flex flex-col">
+                <div class="flex">
                     <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="" class="h-6 w-6  m-0.5"> 
                     <p class="text-white ml-5">Instagram</p> 
                 </div>
             </div>
-            <div class=" mr-16">
+            <div class=" mr-16 ">
                 <h1 class="font-bold text-white mb-1 ">Location</h1>
                 <p class="text-white ">BP 511, Phum Tropeang Chhuk (Borey Sorla) <br> 
                     Sangtak, Street 371, Phnom Penh.
