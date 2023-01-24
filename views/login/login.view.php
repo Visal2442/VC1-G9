@@ -3,3 +3,4 @@
 <?php require "views/partials/banner.php" ?>
 
 <h1>Hello</h1>
+
