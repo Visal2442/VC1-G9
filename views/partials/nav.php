@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-<nav class=" flex justify-between  border-gray-200   p-5   "
-        style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
-        <div class="nav-left mt-3 ">
-            <div class="flex flex-col  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                <a href="" class="logo p-0 m-0">
-                    <img class="h-25 w-28 -mt-7 -mb-5 " src="assets/logo/cinema-logo.png">
-                </a>
-                <a href="#"
-                    class="  hover:underline-offset-1  hover:underline  block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white"
-                    aria-current="page">Home</a>
-                <a href="#"
-                    class="block py-2 pr-4 pl-3 text-white border-b border-white hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About
-                    Us</a>
-                <a href="#"
-                    class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contace
-                    Us</a>
-            </div>
-        </div>
-        <div class="nav-right  mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
-            <div class="btn m-0 flex  ">
-                <!-- <input type="text" name="" id="" placeholder="search..." class="m-0 py-2 pr-4 mr-10 pl-3 w-80 rounded-full "> -->
-                <form action="#" method="post" class=" relative mx-auto text-gray-600 lg:block mr-8">
-=======
 <nav class=" flex justify-between  border-gray-200 p-6"
         style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
         <div class="nav-left mt-3 ">
@@ -35,7 +11,6 @@
         <div class="nav-right mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
             <div class="btn m-0 flex">
                 <form action="#" method="post" class="relative mx-auto text-gray-600 lg:block mr-8">
->>>>>>> home_page
                     <input
                         class=" border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm outline-white hover:outline-yellow-300"
                         type="text" name="search" id="search" placeholder="Search" autocomplete="off">
