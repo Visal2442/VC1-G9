@@ -43,10 +43,7 @@
                             <span class="text-yellow-500">10 February 2023</span>
                         </div>
                     </div>
-                    
-                    
                 </div>
-                
             </div>
 
              <!-- Item 1 -->
@@ -85,9 +82,7 @@
                             <span class="text-yellow-500">10 February 2023</span>
                         </div>
                     </div>
-                    
                 </div>
-                
             </div>
             <!-- Item 3 -->
             <div class="hidden mt-20 p-6 duration-700 ease-in-out" data-carousel-item style="background-image: linear-gradient(90deg,#041826,#082336,#143954,#093351,#092F4A,#072840,#05253A);">
@@ -126,9 +121,7 @@
                             <span class="text-yellow-500">10 February 2023</span>
                         </div>
                     </div>
-                    
                 </div>
-                
             </div>
 
             <!-- Slider indicators -->

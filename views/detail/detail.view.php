@@ -21,6 +21,6 @@
 
 </div>
 <div class="pl-28 pt-8 pb-8">
-    <iframe class=" h-96 w-11/12 "  src="https://www.youtube.com/embed/a8Gx8wiNbs8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class=" h-96 w-11/12"  src="https://www.youtube.com/embed/a8Gx8wiNbs8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <?php  require '../partials/footer.php';?>
