@@ -147,5 +147,5 @@
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   </div>
 </div>
-  
+
 <?php require "views/partials/footer.php" ?>

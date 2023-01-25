@@ -25,7 +25,7 @@
                 </form>
                 <div class="btn">
                     <button class=' bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white  rounded'>
-                        <a href="/register"> Register</a></button>
+                        <a href="/register">Register</a></button>
                     <button class=' bg-[#0d3652] hover:bg-[#0C5384] hover:underline py-2 pr-4 pl-3 ml-auto text-white rounded '>
                         <a href="/login"> Log in </a>
                     </button>
