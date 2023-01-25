@@ -1,10 +1,11 @@
 <?php require "views/partials/head.php" ?>
 <?php require "views/partials/nav.php" ?>
 <?php require "views/partials/banner.php" ?>
+<?php require "controllers/register/register.account.controller.php"?>
 
-<form action="" method="" class="min-w-screen min-h-screen flex items-center justify-center  py-5">
+<form action="" method="post" class="min-w-screen min-h-screen flex items-center justify-center  py-5">
     <div class="md:flex w-full h-1/4">
-        <div class="w-1/3 md:py-10  md:px-10 m-auto " style="background-color:#133954; box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;">
+        <div class="w-1/3 md:py-10 md:px-10 m-auto" style="background-color:#133954; box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;">
             <div class="text-center mb-3">
                 <h1 class="font-bold text-3xl text-white">REGISTER</h1>
             </div>
@@ -14,7 +15,8 @@
                         <label for="" class="text-white  px-1 font-medium">Username</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 p-1.5 border-2 border-gray-200 outline-none  font-thin" placeholder="Enter your username" required>
+                                <input type="text" class="w-full -ml-10 p-1.5 border-2 border-gray-200 outline-none  font-thin" placeholder="Enter your username" required>
+                                <small class="text-red-600"> <?php echo $username_error; ?></small>
                             </div>
                         </div>
                     </div>
