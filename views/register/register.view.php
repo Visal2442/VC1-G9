@@ -32,7 +32,7 @@
                         <div class="w-full px-3 mb-5">
                             <label for="password" class="text-white px-1 font-medium">Password</label>
                             <div class="flex">
-                                <input type="password" class="w-full pr-3 p-1.5 border-2 border-gray-200 outline-none font-thin" placeholder="Enter your password" name="password">
+                                <input type="text" class="w-full pr-3 p-1.5 border-2 border-gray-200 outline-none font-thin" placeholder="Enter your password" name="password">
                             </div>
                             <small class="text-red-500"> <?= $password_error; ?></small>
                         </div>
