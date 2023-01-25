@@ -44,6 +44,7 @@ if (isset($_POST['submit'])) {
         $confirm_password = validateInput($_POST['confirm_password']);
         if ($confirm_password === $passowrd) {
             $_SESSION['confirm_password'] = $confirm_password;
+            $password_hash = password_hash($confirm_password,PASSWORD_BCRYPT);
         } elseif (empty($passowrd)) {
             $confirm_error = "Must fill password";
             $form_valid = false;
@@ -72,7 +73,7 @@ if (isset($_POST['submit'])) {
     }
     if ($form_valid) {
         $type = 0;
-        createUser($email, $username, $confirm_password, $type);
+        createUser($email, $username, $password_hash, $type);
         createCustomer($address, $date, $email);
         header('location: /');
     }
