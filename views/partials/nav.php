@@ -1,15 +1,14 @@
 <?php
     session_start();
     if(!empty($_SESSION['username'])){
-        $display="hidden";
-    }
-    else{
-        $display="";
+        $display=true;
+    }else{
+        $display=false;
     }
 ?>
 
-<nav class=" flex justify-between  border-gray-200 p-6"
-        style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
+<nav class=" flex justify-between border-gray-200 p-6"
+        style="box-shadow: rgba(0,0, 0, 0.45) 0px 25px 20px -20px;">
         <div class="nav-left mt-3 ">
             <div class="flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 <img class="h-10 w-10 -mt-2.5 rounded-full" src="assets/logo/cinema-logo.png">
@@ -20,7 +19,6 @@
         </div>
         <div class="nav-right mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
             <div class="btn m-0 flex">
-                <a href="logout.php">Log out</a>
                 <form action="#" method="post" class="relative mx-auto text-gray-600 lg:block mr-8">
                     <input
                         class=" border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm outline-white hover:outline-yellow-300"
@@ -35,10 +33,14 @@
                     </button>
                 </form>
                 <div class="btn">
-                    <button class='<?= $display; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white  rounded'>
-                        <a href="/register">Register</a></button>
-                    <button class='bg-[#0d3652] hover:bg-[#0C5384] hover:underline py-2 pr-4 pl-3 ml-auto text-white rounded '>
-                        <a href="/login"> Log in </a>
+                    <button class='<?php echo $display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
+                        <a href="logout.php">Log out</a>
+                    </button>
+                    <button class='<?php echo !$display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
+                        <a href="/register">Register</a>
+                    </button>
+                    <button class='<?php echo !$display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
+                        <a href="/login">Log in</a>
                     </button>
                 </div>
             </div>
