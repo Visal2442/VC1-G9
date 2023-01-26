@@ -12,16 +12,18 @@
         <div class="nav-left mt-3 ">
             <div class="flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 <img class="h-10 w-10 -mt-2.5 rounded-full" src="assets/logo/cinema-logo.png">
-                <a href="/" class="block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Home</a>
-                <a href="#" class="block py-2 pr-4 pl-3 text-white border-b border-white hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
-                <a href="#" class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                
+                <a href="/" class=" block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Home</a>
+                <a href="#" class="  block py-2 pr-4 pl-3 text-white border-b border-white hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                <a href="#" class=" w-28 block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                
             </div>
         </div>
         <div class="nav-right mr-8 w-full md:block md:w-auto" id="mobile-menu  ">
             <div class="btn m-0 flex">
                 <form action="#" method="post" class="relative mx-auto text-gray-600 lg:block mr-8">
                     <input
-                        class=" border-2 border-gray-300 bg-white w-96 h-10 pl-2 pr-8 rounded-full text-sm outline-white hover:outline-yellow-300"
+                        class=" border-2 border-gray-300 bg-white w-96 h-10 pl-2 mt-1 pr-8 rounded-full text-sm outline-white hover:outline-yellow-300"
                         type="text" name="search" id="search" placeholder="Search" autocomplete="off">
                     <button type="submit" name="submit" value="search" class="absolute right-0 top-0 mt-3 mr-3">
                         <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -39,7 +41,7 @@
                     <button class='<?php echo !$display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
                         <a href="/register">Register</a>
                     </button>
-                    <button class='<?php echo !$display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
+                    <button class='<?php echo !$display?"":"hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 mt-1 text-white rounded'>
                         <a href="/login">Log in</a>
                     </button>
                 </div>
