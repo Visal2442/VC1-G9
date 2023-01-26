@@ -1,9 +1,14 @@
 <?php
 require 'database/database.php';
-$username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = "";
+$username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error= $isTaken_error = "";
 $form_valid = true;
 if (isset($_POST['submit'])) {
-    if (isset($_POST['username'])) {
+    $isUser=getUserByemail($_POST['email']);
+    if($isUser>0){
+        $isTaken_error = "Account is already taken"; 
+        $form_valid=false;
+    }
+    elseif (isset($_POST['username'])) {
         $username = validateInput($_POST['username']);
         if(ctype_alnum($username)){
             $_SESSION['username'] = $username;
