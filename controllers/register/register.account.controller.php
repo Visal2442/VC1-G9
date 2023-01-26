@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'database/database.php';
 $username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = "";
 $form_valid = true;
