@@ -2,7 +2,7 @@
 <?php  require 'views/partials/head.php';?>
 <?php  require 'views/partials/nav.php';?>
 
-<div class='flex justify-center w-full px-12 text-white gap-16'>
+<div class=' flex justify-center w-full px-12 text-white gap-16'>
     <div class="flex">   
         <img src="<?= $show["image"]?>" class="w-96 mt-20 h-96" alt="..." />
     </div>
