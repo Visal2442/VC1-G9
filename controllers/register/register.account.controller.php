@@ -7,22 +7,25 @@ if (isset($_POST['submit'])) {
     if ($isUser > 0) {
         $isTaken_error = "Email is already exist";
         $form_valid = false;
-    } elseif (isset($_POST['username'])) {
+    }
+    //Validate username
+    elseif (isset($_POST['username'])) {
         $username = validateInput($_POST['username']);
-        if(empty($username)) {
+        if (empty($username)) {
             $username_error = "Username is invalid";
             $form_valid = false;
         } elseif (strlen($username) <= 5) {
             $username_error = "Username must be at least 5 characters";
             $form_valid = false;
         } elseif (ctype_alnum($username)) {
-            setcookie("username", $username, time() +(7*24*3600));
+            setcookie("username", $username, time() + (7 * 24 * 3600));
             $_SESSION['username'] = $username;
         } else {
             $username_error = "Username is invalid";
             $form_valid = false;
         }
     }
+    // Validate email
     if (isset($_POST['email'])) {
         $email = validateInput($_POST['email']);
         $_SESSION['email'] = $email;
@@ -34,6 +37,7 @@ if (isset($_POST['submit'])) {
             $form_valid = false;
         }
     }
+    //Validate password
     if (isset($_POST['password'])) {
         $passowrd = validateInput($_POST['password']);
         if (strlen($passowrd) < 8) {
@@ -55,6 +59,7 @@ if (isset($_POST['submit'])) {
             $form_valid = false;
         }
     }
+    // Validate date of birth
     if (isset($_POST['date_of_birth'])) {
         $date = validateInput($_POST['date_of_birth']);
         $_SESSION['date'] = $date;
@@ -63,6 +68,7 @@ if (isset($_POST['submit'])) {
             $form_valid = false;
         }
     }
+    // Validate address
     if (isset($_POST['address'])) {
         $address = validateInput($_POST['address']);
         if (!empty($address)) {
@@ -83,7 +89,7 @@ if (isset($_POST['submit'])) {
 
 
 
-// validate input 
+// Validate input 
 function validateInput(string $input): string
 {
     $input = htmlspecialchars($input);
