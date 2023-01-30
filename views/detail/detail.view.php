@@ -8,11 +8,9 @@
     }
 ?>
 
-<div class='block md:flex justify-center px-12 text-white gap-10'>
-    <div class="flex">
-        <img src="<?= $show["image"] ?>" class="w-80 h-96 md:w-96 md:h-96 mt-20">
-    </div>
-    <div class=" mt-10 md:mt-20 flex flex-col gap-2">
+<div class='block md:flex px-12 text-white gap-10'>
+    <img src="<?= $show["image"] ?>" class="w-80 h-96 md:w-96 md:h-96 mt-20">
+    <div class="mt-10 md:mt-20 flex flex-col gap-2">
         <h1 class="font-bold text-5xl"><?= $show['show_name'] ?></h1>
         <p class="font-semibold text-lg text-gray-300 md:block">Subtitle: English</p>
         <div class=" flex items-center">
