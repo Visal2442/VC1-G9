@@ -1,6 +1,3 @@
 <?php 
-session_start();
-$_SESSION=array();
-session_unset();
-session_destroy();
+setcookie('username',"", time()-(2300));
 header('location:/');
