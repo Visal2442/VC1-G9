@@ -23,9 +23,12 @@
                     <a href="#" class="text-sm hover:text-red-500 font-medium text-white hover:underline dark:text-primary-500">Forgot Password ?</a>
                 </div>
                 <button type="submit" name="submit" class="bg-sky-500/50 hover:bg-sky-500/60 font-bold block w-full p-1.5 border border-none text-white text-lg">LOG IN</button>
-                <p class="text-sm text-white">I don't have an account yet ?
-                    <a href="/register" class="pl-1 font-lg text-primary-600 dark:text-primary-500 hover:underline hover:text-red-500">Register</a>
-                </p>
+                <div class="flex justify-between items-center">
+                    <a href="/" class="text-white items-center hover:text-blue-500">Back</a>
+                    <p class="text-sm text-white">Don't have an account yet ?
+                        <a href="/register" class="pl-1 font-lg text-primary-600 dark:text-primary-500 hover:underline hover:text-blue-500 font-bold underline">Register</a>
+                    </p>
+                </div>
             </form>
         </div>
     </div>

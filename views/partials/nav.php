@@ -6,7 +6,6 @@ if (isset($_COOKIE['username'])) {
     $display = false;
 }
 ?>
-
 <nav class="relative w-full flex flex-wrap items-center justify-between py-4 hover:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">
     <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
         <button class="navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +36,7 @@ if (isset($_COOKIE['username'])) {
                 <div class="relative text-gray-600 mr-5">
                     <input class="border-2 border-gray-300 md:w-96 sm:w-full py-2 pl-3 rounded text-sm outline-white hover:outline-yellow-300" type="text" name="search" id="search" placeholder="Search the show..." autocomplete="off">
                     <i class="material-icons absolute right-1 top-2">search</i>
-                    <div class="list absolute z-50" id="show_list">
-
-                    </div>
+                    <div class="list absolute z-50" id="show_list"></div>
                 </div>
                 <button class='<?= !$display ? "" : "hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
                     <a href="/login">Log in</a>

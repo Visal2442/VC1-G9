@@ -1,5 +1,4 @@
 <?php require "views/partials/head.php" ?>
-<?php require "views/partials/nav.php" ?>
 <?php require "controllers/register/register.account.controller.php" ?>
 
 <form action="#" method="post" class=" min-w-screen min-h-screen flex items-center justify-center  py-5">
@@ -67,10 +66,13 @@
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
                             <button class="bg-sky-500/50 hover:bg-sky-500/60 register block w-full mx-auto text-white text-xl font-bold p-2" type='submit' name="submit">REGISTER</button>
-                            <p class="text-sm text-white">
-                                I have account.
-                                <a href="/login"class="pl-1 font-lg font-bold text-primary-600 dark:text-primary-500 hover:underline hover:text-red-500">Log in </a>
-                            </p>
+                            <div class="flex justify-between items-center mt-5">
+                                <a href="/" class="text-white hover:text-blue-500 hover:underline">Back</a>
+                                <p class="text-sm text-white">
+                                    I have an account.
+                                    <a href="/login"class="pl-1 font-lg font-bold text-primary-600 dark:text-primary-500 hover:underline hover:text-blue-500">Log in </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
             </div>

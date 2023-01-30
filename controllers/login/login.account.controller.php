@@ -9,6 +9,7 @@ if (isset($_POST['submit'])) {
         if ($_POST['email'] == $user["email_address"] && $_POST['username'] == $user["username"] && $is_passowrd ) {
             $_SESSION['email'] = $user["email_address"];
             $_SESSION['username'] = $user["username"];
+            setcookie("username", $user["username"], time()+(7*24*3600));
             $isUser = true;
             break;
         } else {

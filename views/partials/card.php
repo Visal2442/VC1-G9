@@ -1,8 +1,8 @@
-<ul class="nav nav-tabs flex flex-row md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 mt-5 ml-10 gap-10" id="tabs-tab" role="tablist">
+<ul class="nav nav-tabs flex flex-row justify-center md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 mt-5 ml-10 gap-10" id="tabs-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <a href="#tabs-home" class="link block text-sm text-white uppercase leading-tight focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home" aria-selected="true" autofocus>All Genres</a></li>
+        <a href="#tabs-home" class="link block text-sm text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home" aria-selected="true" autofocus>All Genres</a></li>
     <li class="nav-item" role="presentation">
-        <a href="#tabs-profile" class="link block text-sm text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab" aria-controls="tabs-profile" aria-selected="false">Action</a>
+        <a href="#tabs-profile" class="link block text-sm text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab" aria-controls="tabs-profile" aria-selected="false">Action</a>
     </li>
     <li class="nav-item" role="presentation">
         <a href="#tabs-messages" class="link block text-sm text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab" aria-controls="tabs-messages" aria-selected="false">Horror</a>
