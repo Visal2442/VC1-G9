@@ -4,7 +4,6 @@ if(isset($_COOKIE['username'])){
     $display=true;
 }else{
     $display=false;
-  
 }
 ?>
 <nav class="relative w-full flex flex-wrap items-center justify-between py-4 hover:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">

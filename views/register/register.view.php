@@ -1,6 +1,6 @@
 <?php require "views/partials/head.php" ?>
 <?php require "controllers/register/register.account.controller.php" ?>
-<?php session_start(); ?>
+
 <form action="#" method="post" class=" min-w-screen min-h-screen flex items-center justify-center  py-5">
     <div class="md:flex w-full h-1/4">
         <div class="register w-1/3 md:py-10 md:px-10 m-auto">
