@@ -1,24 +1,26 @@
-
-<div class="slideshow-container">
-    <div class="mySlides fade">
-        <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20224729104755.jpg" style="width:100%; height:70vh">
+<div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
+    <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+        <button type="button" class="active" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="mySlides fade">
-        <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20232106122123.jpg" style="width:100%;height:70vh">
+    <div class="carousel-inner relative w-full overflow-hidden">
+        <div class="carousel-item active float-left w-full">
+            <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20224729104755.jpg" class="block" style="width:100%; height:70vh">
+        </div>
+        <div class="carousel-item float-left w-full">
+            <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20232106122123.jpg" class="block" style="width:100%;height:70vh">
+        </div>
+        <div class="carousel-item float-left w-full">
+            <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20235206115238.png" class="block" style="width:100%; height:70vh" />
+        </div>
     </div>
-    <div class="mySlides fade">
-        <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20224203044220.jpg" style="width:100%;height:70vh">
-    </div>
-    <div class="mySlides fade">
-        <img src="https://www.majorcineplex.com.kh/load_file/ads/file_20235206115238.png" style="width:100%;height:70vh">
-    </div>
+    <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-
-<div style="text-align:center">
-    <span class="dot hover:bg-white" onclick="currentDiv(0)"></span>
-    <span class="dot hover:bg-white" onclick="currentDiv(1)"></span>
-    <span class="dot hover:bg-white" onclick="currentDiv(2)"></span>
-    <span class="dot hover:bg-white" onclick="currentDiv(3)"></span>
-</div>
-
-<script src="views/js/banner.js"></script>
