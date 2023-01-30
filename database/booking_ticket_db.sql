@@ -31,7 +31,8 @@ CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `email_address` varchar(255) NOT NULL
+  `email_address` varchar(255) NOT NULL,
+  `profile` varchar(255) NOT NULL DEFAULT 'Default_pf.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -62,7 +63,7 @@ CREATE TABLE `users` (
   `email_address` varchar(255) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `type` int(11) NOT NULL DEFAULT 0
+  `type` int(11) NOT NULL DEFAULT 0,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

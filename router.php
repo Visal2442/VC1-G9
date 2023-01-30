@@ -7,7 +7,8 @@ $routes = [
     '/login' => 'controllers/login/login.controller.php',
     '/register' => 'controllers/register/register.controller.php',
     '/detail' => 'controllers/detail/detail.controller.php',
-    '/search' => 'controllers/search/search.controller.php'
+    '/search' => 'controllers/search/search.controller.php',
+    '/profile' => 'controllers/profile/profile.controller.php'
 ];
 
 if (array_key_exists($uri, $routes)) {

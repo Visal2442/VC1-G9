@@ -7,7 +7,7 @@ function getUser() : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserByemail(string $email)
+function getEmail(string $email)
 {
     global $connection;
     $statement = $connection -> prepare('select email_address from users where email_address = :email');

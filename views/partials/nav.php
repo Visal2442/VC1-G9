@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (isset($_COOKIE['username'])) {
-    $display = true;
-} else {
-    $display = false;
+if(isset($_COOKIE['username'])){
+    $display=true;
+}else{
+    $display=false;
+  
 }
 ?>
 <nav class="relative w-full flex flex-wrap items-center justify-between py-4 hover:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">
@@ -42,11 +43,11 @@ if (isset($_COOKIE['username'])) {
                     <a href="/login">Log in</a>
                 </button>
                 <a href="#" class="dropdown-toggle flex items-center hidden-arrow <?= $display ? "" : "hidden"; ?>" id="dropdownMenuButton2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-full" style="height: 60px; width: 60px" />
+                    <img src="../../assets/profile/unnamed.png" class=" h-10 w-10 rounded-full ">
                 </a>
                 <ul class=" dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-40 m-0 bg-clip-padding border-none left-auto right-0 " aria-labelledby="dropdownMenuButton2">
                     <li>
-                        <a href="#" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100 ">My Profile</a>
+                        <a href="/profile" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100 ">My Profile</a>
                     </li>
                     <li>
                         <a href="logout.php" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100">Log Out</a>

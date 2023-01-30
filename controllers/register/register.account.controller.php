@@ -1,10 +1,9 @@
 <?php
-session_start();
 require 'database/database.php';
 $username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = $isTaken_error = "";
 $form_valid = true;
 if (isset($_POST['submit'])) {
-    $isUser = getUserByemail($_POST['email']);
+    $isUser = getEmail($_POST['email']);
     if ($isUser > 0) {
         $isTaken_error = "Email is already exist";
         $form_valid = false;
@@ -68,19 +67,16 @@ if (isset($_POST['submit'])) {
         $address = validateInput($_POST['address']);
         if (!empty($address)) {
             $_SESSION['address'] = $address;
-        } elseif (empty($address)) {
+        } else {
             $address_error = "Address is required";
             $form_valid = false;
-        } else {
-            $address_error = "Address invalid";
-            $form_valid = false;
-        }
+        } 
     }
     if ($form_valid) {
         $type = 0;
-        header("location: /");
         createUser($email, $username, $password_hash, $type);
         createCustomer($address, $date, $email);
+        header("location: /");
     }
 }
 
