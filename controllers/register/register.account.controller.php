@@ -3,8 +3,9 @@ require 'database/database.php';
 $username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = $isTaken_error = "";
 $form_valid = true;
 if (isset($_POST['submit'])) {
-    $isUser = getEmail($_POST['email']);
-    if ($isUser > 0) {
+    $time=time() + (7 * 24 * 3600);
+    $isUser = getUserEmail($_POST['email']);
+    if (!empty($isUser)) {
         $isTaken_error = "Email is already exist";
         $form_valid = false;
     }
@@ -18,8 +19,7 @@ if (isset($_POST['submit'])) {
             $username_error = "Username must be at least 5 characters";
             $form_valid = false;
         } elseif (ctype_alnum($username)) {
-            setcookie("username", $username, time() + (7 * 24 * 3600));
-            $_SESSION['username'] = $username;
+            setcookie("username", $username, $time);
         } else {
             $username_error = "Username is invalid";
             $form_valid = false;
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     // Validate email
     if (isset($_POST['email'])) {
         $email = validateInput($_POST['email']);
-        $_SESSION['email'] = $email;
+        setcookie("email", $email, $time);
         if (!str_contains($email, '@') && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $email_error = "Email is invalid";
             $form_valid = false;
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
     // Validate date of birth
     if (isset($_POST['date_of_birth'])) {
         $date = validateInput($_POST['date_of_birth']);
-        $_SESSION['date'] = $date;
+        setcookie("date", $date, $time);
         if (empty($date)) {
             $date_error = "Date is required";
             $form_valid = false;
@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['address'])) {
         $address = validateInput($_POST['address']);
         if (!empty($address)) {
-            $_SESSION['address'] = $address;
+            setcookie("address", $address, $time);
         } else {
             $address_error = "Address is required";
             $form_valid = false;
