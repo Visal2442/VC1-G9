@@ -31,7 +31,7 @@
                         <div class="w-full px-3 mb-5">
                             <label for="password" class="text-white px-1 font-medium">Password</label>
                             <div class="flex">
-                                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 outline-0" placeholder="Enter your password" name="password">
+                                <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 outline-0" placeholder="Enter your password" name="password">
                             </div>
                             <small class="text-red-500"> <?= $password_error; ?></small>
                         </div>
