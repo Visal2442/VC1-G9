@@ -9,10 +9,11 @@ if (isset($_POST['submit'])) {
         if (!empty($user)) {
             if ($user['role'] == 1) {
                 $_SESSION['seller_name'] = $user['username'];     // type 1 = seller
-                header('Location:/');
+                header('Location:/seller');
                 exit();
             }
         } else {
+            // $customer = getCusByEmail($_POST['email']);
             $is_passowrd = password_verify($_POST["password"], $user["password"]);
             if ($_POST["username"] == $user["username"] && $is_passowrd) {
                 $time = time() + (30 * 24 * 3600);
