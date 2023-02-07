@@ -1,7 +1,7 @@
  <!-- Venue  -->
+ <?php require("views/seller/venue/venue.create.view.php");?>
  <div class="tab-pane fade text-white" id="tab-venue">
      <!-- Modal -->
-    
      <div class="w-full flex justify-between items-center p-4 mb-5 bg-slate-800 shadow-lg">
          <h1> Welcome To Seller Page</h1>
          <div class="flex items-center gap-2">
