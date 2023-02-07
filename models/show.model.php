@@ -1,9 +1,9 @@
 <?php 
 
-function getShow() :array
+function getShows() :array
 {
     global $connection;
-    $statement = $connection->prepare('select * from shows');
+    $statement = $connection->prepare('select * from movies');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -11,7 +11,7 @@ function getShow() :array
 function getShowById(int $id) :array
 {
     global $connection;
-    $statement = $connection->prepare('select * from shows where show_id = :id');
+    $statement = $connection->prepare('select * from movies where movie_id = :id');
     $statement->execute([
         ":id" => $id
     ]);
@@ -21,7 +21,7 @@ function getShowById(int $id) :array
 function searchShow(string $input) :array
 {
     global $connection;
-    $statement = $connection->prepare("select * from shows where show_name like '%$input%' ");
+    $statement = $connection->prepare("select * from movies where movie_name like '%$input%' ");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }

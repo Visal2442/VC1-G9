@@ -3,7 +3,7 @@ require 'database/database.php';
 $username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = $isTaken_error = "";
 $form_valid = true;
 if (isset($_POST['submit'])) {
-    $time=time() + (7 * 24 * 3600);
+    $time = time() + (7 * 24 * 3600);
     $isUser = getUserEmail($_POST['email']);
     if (!empty($isUser)) {
         $isTaken_error = "Email is already exist";
@@ -76,12 +76,12 @@ if (isset($_POST['submit'])) {
         } else {
             $address_error = "Address is required";
             $form_valid = false;
-        } 
+        }
     }
     if ($form_valid) {
-        $type = 0;
-        createUser($email, $username, $password_hash, $type);
-        createCustomer($address, $date, $email);
+        $role = 0;
+        createUser($email, $username, $password_hash, $date, $address, $role);
+        createCustomer($email);
         header("location: /");
     }
 }

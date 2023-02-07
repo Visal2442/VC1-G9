@@ -20,7 +20,7 @@
                         <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                         </div>
                         <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
-                            <h1 class="font-bold text-white mb-3"><?= $show['show_name']; ?></h1>
+                            <h1 class="font-bold text-white mb-3"><?= $show['movie_name']; ?></h1>
                             <div class="flex flex-col">
                                 <div class="flex text-white m-1">
                                     <i class="material-icons">sell</i>
@@ -28,18 +28,18 @@
                                 </div>
                                 <div class="flex text-white m-1">
                                     <i class="material-icons">schedule</i>
-                                    <p class="ml-3"><?= $show['date']; ?></p>
+                                    <p class="ml-3"><?= $show['duration']; ?></p>
                                 </div>
                             </div>
                             <div class="flex flex-col pt-6 gap-3 w-auto">
-                                <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['show_id'] ?>">MORE INFO</a></button>
-                                <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['show_id'] ?>">BOOK NOW</a></button>
+                                <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['movie_id'] ?>">MORE INFO</a></button>
+                                <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['movie_id'] ?>">BOOK NOW</a></button>
                             </div>
                         </div>
                     </div>
                     <div class=" text-center mt-2">
-                        <h1 class="text-xl text-white"><?= $show['show_name']; ?></h1>
-                        <span class="text-yellow-500"><?= $show['date']; ?></span>
+                        <h1 class="text-xl text-white"><?= $show['movie_name']; ?></h1>
+                        <span class="text-yellow-500"><?= $show['release_date']; ?></span>
                     </div>
                 </div>
             <?php
@@ -59,7 +59,7 @@
                             <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                             </div>
                             <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
-                                <h1 class="font-bold text-white mb-3"><?= $show['show_name']; ?></h1>
+                                <h1 class="font-bold text-white mb-3"><?= $show['movie_name']; ?></h1>
                                 <div class="flex flex-col">
                                     <div class="flex text-white m-1">
                                         <i class="material-icons">sell</i>
@@ -67,18 +67,18 @@
                                     </div>
                                     <div class="flex text-white m-1">
                                         <i class="material-icons">schedule</i>
-                                        <p class="ml-3"><?= $show['date']; ?></p>
+                                        <p class="ml-3"><?= $show['duration']; ?></p>
                                     </div>
                                 </div>
                                 <div class="flex flex-col pt-6 gap-3 w-auto">
-                                    <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['show_id'] ?>">MORE INFO</a></button>
-                                    <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['show_id'] ?>">BOOK NOW</a></button>
+                                    <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['movie_id'] ?>">MORE INFO</a></button>
+                                    <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['movie_id'] ?>">BOOK NOW</a></button>
                                 </div>
                             </div>
                         </div>
                         <div class=" text-center mt-2">
-                            <h1 class="text-xl text-white"><?= $show['show_name']; ?></h1>
-                            <span class="text-yellow-500"><?= $show['date']; ?></span>
+                            <h1 class="text-xl text-white"><?= $show['movie_name']; ?></h1>
+                            <span class="text-yellow-500"><?= $show['release_date']; ?></span>
                         </div>
                     </div>
             <?php
@@ -99,7 +99,7 @@
                             <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                             </div>
                             <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
-                                <h1 class="font-bold text-white mb-3"><?= $show['show_name']; ?></h1>
+                                <h1 class="font-bold text-white mb-3"><?= $show['movie_name']; ?></h1>
                                 <div class="flex flex-col">
                                     <div class="flex text-white m-1">
                                         <i class="material-icons">sell</i>
@@ -107,18 +107,18 @@
                                     </div>
                                     <div class="flex text-white m-1">
                                         <i class="material-icons">schedule</i>
-                                        <p class="ml-3"><?= $show['date']; ?></p>
+                                        <p class="ml-3"><?= $show['duration']; ?></p>
                                     </div>
                                 </div>
                                 <div class="flex flex-col pt-6 gap-3 w-auto">
-                                    <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['show_id'] ?>">MORE INFO</a></button>
-                                    <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['show_id'] ?>">BOOK NOW</a></button>
+                                    <button class="px-10 py-1 hover:bg-white hover:text-black text-center rounded text-white border-solid border-2 border-white-600 "><a href="/detail?id=<?= $show['movie_id'] ?>">MORE INFO</a></button>
+                                    <button class="px-10 py-1 hover:bg-yellow-300 text-center rounded bg-yellow-500 text-black-500"><a href="/detail?id=<?= $show['movie_id'] ?>">BOOK NOW</a></button>
                                 </div>
                             </div>
                         </div>
                         <div class=" text-center mt-2">
-                            <h1 class="text-xl text-white"><?= $show['show_name']; ?></h1>
-                            <span class="text-yellow-500"><?= $show['date']; ?></span>
+                            <h1 class="text-xl text-white"><?= $show['movie_name']; ?></h1>
+                            <span class="text-yellow-500"><?= $show['release_date']; ?></span>
                         </div>
                     </div>
             <?php

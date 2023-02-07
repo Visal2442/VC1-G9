@@ -1,6 +1,6 @@
 <?php
 require 'models/show.model.php';
 
-$shows= getShow();
+$shows= getShows();
 
 require "views/home/index.view.php";
