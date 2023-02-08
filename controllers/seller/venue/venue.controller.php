@@ -21,7 +21,7 @@ foreach ($venues as $venue) :
                             <p>Do you want to delete?</p>
                         </div>
                         <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 rounded-b-md">
-                            <button type="button" class="px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase border transition duration-150 ease-in-out" data-bs-dismiss="modal">Cancle</button>
+                            <button type="button" class="bg-gray-100 hover:bg-gray-200 px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase border transition duration-150 ease-in-out rounded " data-bs-dismiss="modal">Cancle</button>
                             <button type="button" class="px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg transition duration-150 ease-in-out ml-1" onclick="deleteVenue(<?= $venue['venue_id'] ?>,<?= $venue_modal ?>)">Delete</button>
                         </div>
                     </div>

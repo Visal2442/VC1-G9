@@ -30,7 +30,6 @@ $(document).ready(function () {
           $("#createVenue").modal("hide");
           form.trigger("reset");
           displayVenue();
-          confirm("Venue created successfully");
       },
     });
   }
@@ -75,19 +74,19 @@ $(document).ready(function () {
   //   });
   // }
   
-  // // Delete Venue
-  // function deleteVenue(venue_id, venue_modal) {
-  //   $.ajax({
-  //     url: "controllers/seller/venue/venue.delete.php",
-  //     method: "POST",
-  //     data: {
-  //       id: venue_id,
-  //     },
-  //     success: function (data) {
-  //       $(venue_modal).modal("hide");
-  //       displayVenue();
-  //       console.log(data);
-  //     },
-  //   });
-  // }
+  // Delete Venue
+  function deleteVenue(venue_id, venue_modal) {
+    $.ajax({
+      url: "controllers/seller/venue/venue.delete.php",
+      method: "POST",
+      data: {
+        venue_id: venue_id,
+      },
+      success: function (data) {
+        $(venue_modal).modal("hide");
+        displayVenue();
+        console.log(data);
+      },
+    });
+  }
   

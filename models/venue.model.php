@@ -17,5 +17,12 @@ function addVenue(string $venue_name, string $location): bool
         ":venue_location" => $location
     ]);
     return $statement->rowCount() > 0;
+}
 
+function deleteVenue(int $venue_id) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("delete from venues where venue_id = :venue_id");
+    $statement->execute([":venue_id" => $venue_id]);
+    return $statement->rowCount() > 0;
 }
