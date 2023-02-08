@@ -1,11 +1,9 @@
-$(document).ready(function () 
-{
+$(document).ready(function () {
   displayVenue();
 });
 
 // Display Venues
-function displayVenue() 
-{
+function displayVenue() {
   $.ajax({
     url: "controllers/seller/venue/venue.controller.php",
     method: "GET",
@@ -16,11 +14,12 @@ function displayVenue()
 }
 
 // Add Venue
-function addVenue() 
-{
+function addVenue() {
   let venue_name = $("#venue_name").val();
   let venue_address = $("#venue_address").val();
   let form = $("#create_venue_form");
+  let error_msg_venue = $("#error_msg_venue");
+  let error_msg_address = $("#error_msg_address");
 
   $.ajax({
     url: "controllers/seller/venue/venue.create.controller.php",
@@ -29,18 +28,22 @@ function addVenue()
       venue_name: venue_name,
       location: venue_address,
     },
-    success: function () 
-    {
-      $("#createVenue").modal("hide");
-      form.trigger("reset");
-      displayVenue();
+    success: function (data) {
+      if (data == "success") {
+        $("#createVenue").modal("hide");
+        form.trigger("reset");
+        displayVenue();
+      }else{
+        alert("Fill cannot be empty")
+      }
+
     },
+
   });
 }
 
 // Edit Venue
-function editVenue(venue_id) 
-{
+function editVenue(venue_id) {
   let edit_venue = $("#editVenue");
   let modal_body = $("#modal-body");
 
@@ -50,8 +53,7 @@ function editVenue(venue_id)
     data: {
       venue_id: venue_id,
     },
-    success: function (data) 
-    {
+    success: function (data) {
       modal_body.html(data);
       edit_venue.modal("show");
     },
@@ -59,8 +61,7 @@ function editVenue(venue_id)
 }
 
 // // Update venue
-function updateVenue(venue_id) 
-{
+function updateVenue(venue_id) {
   let venue_name = $("#venue-name").val();
   let venue_address = $("#venue-address").val();
 
@@ -72,8 +73,7 @@ function updateVenue(venue_id)
       venue_name: venue_name,
       venue_address: venue_address,
     },
-    success: function (data) 
-    {
+    success: function (data) {
       if (data == "success") {
         $("#editVenue").modal("hide");
         displayVenue();
@@ -83,16 +83,14 @@ function updateVenue(venue_id)
 }
 
 // Delete Venue
-function deleteVenue(venue_id, venue_modal) 
-{
+function deleteVenue(venue_id, venue_modal) {
   $.ajax({
     url: "controllers/seller/venue/venue.delete.controller.php",
     method: "POST",
     data: {
       venue_id: venue_id,
     },
-    success: function (data) 
-    {
+    success: function (data) {
       $(venue_modal).modal("hide");
       displayVenue();
       console.log(data);

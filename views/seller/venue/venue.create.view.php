@@ -14,11 +14,12 @@
                     <div class="form-venue ml-2 mb-2 mr-5">
                         <label for="movie venue">Venue Name </label>
                         <input type="text" id="venue_name" name="venue" class="bg-gray-50 rounded border-black text-gray-900 text-sm block w-full p-2.5  outline-none border " placeholder="Venue Name">
-                        <small id="error_msg" class="text-red-500"></small>
+                        <!-- <small id="error_msg_venue" class="text-red-500"></small> -->
                     </div>
                     <div class="venue-address ml-2 mb-2 mr-5">
                         <label for="address"> Address </label>
                         <input type="text" id="venue_address" name="address" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="Venue Address">
+                        <!-- <small id="error_msg_address" class="text-red-500"></small> -->
                     </div>
                     <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
                         <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">Cancel</button>
