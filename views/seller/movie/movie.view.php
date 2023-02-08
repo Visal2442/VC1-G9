@@ -1,3 +1,4 @@
+<?php require("views/seller/movie/movie.create.view.php");?>
 <div class="tab-pane fade text-white" id="tab-allMovie">
     <div class="w-full flex justify-between items-center p-4 mb-5 bg-slate-800 shadow-lg">
         <h1> Welcome To Seller Page</h1>
