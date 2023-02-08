@@ -5,7 +5,7 @@ $(document).ready(function () {
   // Display Venues
   function displayVenue() {
     $.ajax({
-      url: "controllers/seller/venue/venue.display.php",
+      url: "controllers/seller/venue/venue.controller.php",
       method: "GET",
       success: function (data) {
         $("#tbody").html(data);
@@ -26,16 +26,11 @@ $(document).ready(function () {
         venue_name: venue_name,
         location: venue_address,
       },
-      success: function (data) {
-        if (data == "success") {
+      success: function () {
           $("#createVenue").modal("hide");
           form.trigger("reset");
           displayVenue();
-          $("#error_msg").html("");
-        }
-        else{
-          $("#error_msg").html(data);
-        }
+          confirm("Venue created successfully");
       },
     });
   }
