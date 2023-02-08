@@ -26,3 +26,29 @@ function deleteVenue(int $venue_id) : bool
     $statement->execute([":venue_id" => $venue_id]);
     return $statement->rowCount() > 0;
 }
+
+//edit venue
+// Get venue by id 
+function getVenueById(int $venue_id): array
+{
+    global $connection;
+    $statement = $connection->prepare('select * from venues where venue_id = :venue_id');
+    $statement -> execute([
+        ":venue_id" => $venue_id
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Update venue 
+function updateVenue(int $venue_id, string $venue_name, string $location):bool
+{
+    global $connection;
+    $statement = $connection->prepare('update venues set venue_name= :venue_name, location= :location where venue_id = :venue_id');
+    $statement->execute([
+        ":venue_id"=>$venue_id,
+        ":venue_name"=>$venue_name,
+        ":location"=>$location
+    ]);
+    return $statement->rowCount()>0;
+}
+

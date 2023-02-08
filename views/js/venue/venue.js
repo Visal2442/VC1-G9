@@ -34,46 +34,45 @@ $(document).ready(function () {
     });
   }
   
-  // Edit Venue
-  // function editVenue(venue_id) {
-  //   let edit_venue = $("#editVenue");
-  //   let modal_body = $("#modal-body");
-  
-  //   $.ajax({
-  //     url: "controllers/seller/venue/venue.edit.php",
-  //     method: "POST",
-  //     data: {
-  //       venue_id: venue_id,
-  //     },
-  //     success: function (data) {
-  //       modal_body.html(data);
-  //       edit_venue.modal("show");  
-  //     },
-  //   });
-  // }
-  
-  // // Update venue
-  // function updateVenue(venue_id) {
-  //   let venue_name = $("#venue-name").val();
-  //   let venue_address = $("#venue-address").val();
-  
-  //   $.ajax({
-  //     url: "controllers/seller/venue/venue.update.php",
-  //     method: "POST",
-  //     data: {
-  //       venue_id: venue_id,
-  //       venue_name: venue_name,
-  //       location: venue_address,
-  //     },
-  //     success: function (data) {
-  //       if (data == "success") {
-  //         $("#editVenue").modal("hide");
-  //         displayVenue();
-  //       }
-  //     },
-  //   });
-  // }
-  
+ // Edit Venue
+ function editVenue(venue_id) {
+  let edit_venue = $("#editVenue");
+  let modal_body = $("#modal-body");
+
+  $.ajax({
+    url: "controllers/seller/venue/venue.edit.php",
+    method: "POST",
+    data: {
+      venue_id: venue_id,
+    },
+    success: function (data) {
+      modal_body.html(data);
+      edit_venue.modal("show");  
+    },
+  });
+}
+
+// Update venue
+function updateVenue(venue_id) {
+let venue_name = $("#venue-name").val();
+let venue_address = $("#venue-address").val();
+
+$.ajax({
+  url: "controllers/seller/venue/venue.update.php",
+  method: "POST",
+  data: {
+    venue_id: venue_id,
+    venue_name: venue_name,
+    venue_address: venue_address,
+  },
+  success: function (data) {
+    if (data == "success") {
+      $("#editVenue").modal("hide");
+      displayVenue();
+    }
+  },
+});
+}
   // Delete Venue
   function deleteVenue(venue_id, venue_modal) {
     $.ajax({
