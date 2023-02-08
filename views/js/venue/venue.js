@@ -4,7 +4,8 @@ $(document).ready(function ()
 });
 
 // Display Venues
-function displayVenue() {
+function displayVenue() 
+{
   $.ajax({
     url: "controllers/seller/venue/venue.controller.php",
     method: "GET",
@@ -38,17 +39,19 @@ function addVenue()
 }
 
 // Edit Venue
-function editVenue(venue_id) {
+function editVenue(venue_id) 
+{
   let edit_venue = $("#editVenue");
   let modal_body = $("#modal-body");
 
   $.ajax({
-    url: "controllers/seller/venue/venue.edit.php",
+    url: "controllers/seller/venue/venue.edit.controller.php",
     method: "POST",
     data: {
       venue_id: venue_id,
     },
-    success: function (data) {
+    success: function (data) 
+    {
       modal_body.html(data);
       edit_venue.modal("show");
     },
@@ -56,19 +59,21 @@ function editVenue(venue_id) {
 }
 
 // // Update venue
-function updateVenue(venue_id) {
+function updateVenue(venue_id) 
+{
   let venue_name = $("#venue-name").val();
   let venue_address = $("#venue-address").val();
 
   $.ajax({
-    url: "controllers/seller/venue/venue.update.php",
+    url: "controllers/seller/venue/venue.update.controller.php",
     method: "POST",
     data: {
       venue_id: venue_id,
       venue_name: venue_name,
-      location: venue_address,
+      venue_address: venue_address,
     },
-    success: function (data) {
+    success: function (data) 
+    {
       if (data == "success") {
         $("#editVenue").modal("hide");
         displayVenue();
