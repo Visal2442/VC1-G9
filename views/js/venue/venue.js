@@ -18,9 +18,6 @@ function addVenue() {
   let venue_name = $("#venue_name").val();
   let venue_address = $("#venue_address").val();
   let form = $("#create_venue_form");
-  let error_msg_venue = $("#error_msg_venue");
-  let error_msg_address = $("#error_msg_address");
-
   $.ajax({
     url: "controllers/seller/venue/venue.create.controller.php",
     method: "POST",
