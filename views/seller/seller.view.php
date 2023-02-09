@@ -10,7 +10,7 @@
     <!-- Movie  -->
     <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">MOVIES</li>
     <li class="nav-item flex-grow">
-      <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100  text-white" data-bs-toggle="pill" data-bs-target="#tab-addMovie" aria-selected="false">Add Movie</a>
+      <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100  text-white" data-bs-toggle="pill" data-bs-target="#tab-show" aria-selected="false">SHOWING MOVIES</a>
     </li>
     <li class="nav-item flex-grow">
       <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-allMovie" aria-selected="false">Movies</a>
@@ -65,27 +65,13 @@
       </div>
     </div>
 
-    <!--Add movie -->
-    <div class="tab-pane fade text-white" id="tab-addMovie">
-      <div class="w-full flex justify-between items-center p-4 mb-5 bg-slate-800 shadow-lg">
-        <h1> Welcome To Seller Page</h1>
-        <div class="flex items-center gap-2">
-          <div class="flex ml-4 gap-3">
-            <div class="flex flex-col">
-              <h1 class="text-end text-lg font-bold">Visal Sork</h1>
-              <p class="text-xs">dembo445@gmail.com</p>
-            </div>
-            <img src="assets/profile/Default_pf.png" alt="Profile" width="40" height="40">
-          </div>
-          <button type="button" class="bg-blue-600 p-2 rounded text-white"><a href="/">Visit Site</a></button>
-        </div>
-      </div>
-    </div>
+    <!--All Shows -->
+   <?php require 'views/seller/show/show.view.php' ?>
 
-    <!-- All movie -->
+    <!-- All Movies -->
    <?php require 'views/seller/movie/movie.view.php' ?>
 
-    <!-- Venue  -->
+    <!-- All Venues -->
     <?php require 'views/seller/venue/venue.view.php' ?>
 
     <!-- User  -->
