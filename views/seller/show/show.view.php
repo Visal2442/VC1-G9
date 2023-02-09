@@ -25,9 +25,10 @@
                 <tr class="uppercase text-white ">
                     <th scope="col" class="px-6 py-3 text-center">Image</th>
                     <th scope="col" class="px-6 py-3 text-center">Title</th>
+                    <th scope="col" class="px-6 py-3 text-center">Venue</th>
                     <th scope="col" class="px-6 py-3 text-center">Hall</th>
                     <th scope="col" class="px-6 py-3 text-center">Showing Date</th>
-                    <th scope="col" class="px-6 py-3 text-center">Time</th>
+                    <th scope="col" class="px-6 py-3 text-center">Showing Time</th>
                     <th scope="col" class="px-6 py-3 text-center">Ticket Price</th>
                     <th scope="col" class="px-6 py-3 text-center">Action</th>
                 </tr>
@@ -39,3 +40,5 @@
         </table>
     </div>
 </div>
+
+<script src="views/js/show/show.js"></script>

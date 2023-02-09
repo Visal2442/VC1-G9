@@ -1,6 +1,6 @@
 <?php
 require 'models/show.model.php';
 
-$shows= getShows();
+$shows= getShowsForCard();
 
 require "views/home/index.view.php";
