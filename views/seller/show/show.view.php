@@ -1,3 +1,5 @@
+
+<?php require("views/seller/show/show.create.view.php")?>
 <div class="tab-pane fade text-white" id="tab-show">
     <div class="w-full flex justify-between items-center p-4 mb-5 bg-slate-800 shadow-lg">
         <h1> Welcome To Show Page</h1>
