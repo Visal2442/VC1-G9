@@ -7,7 +7,6 @@ function getMovies(): array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-
 // add movie into database 
 function addMovie(string $movie_name, string $genre, string $subtitle, string $description, string $release_date, string $duration, string $image, string $trailer): bool
 {
