@@ -9,7 +9,7 @@ if (isset($_COOKIE['username'])) {
 ?>
 
 <div class='block md:flex px-12 text-white gap-10'>
-    <img src="<?= $shows[0]["image"] ?>" class="w-80 h-96 md:w-80 md:h-96 mt-20">
+    <img src="../../assets/movie_image/<?= $shows[0]["image"] ?>" class="w-80 h-96 md:w-80 md:h-96 mt-20">
     <div class="mt-10 md:mt-20 flex flex-col gap-2">
         <h1 class="font-bold text-5xl"><?= $shows[0]['movie_name'] ?></h1>
         <div class="flex items-center">
