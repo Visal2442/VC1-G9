@@ -7,7 +7,7 @@ foreach ($movies as $movie) :
     $movie_modal = "deleteMovie" . $movie['movie_id'];
 ?>
     <tr class="font-medium text-gray-300 dark:text-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 border-b-2 border-gray-400">
-        <td class=""><img src=<?= $movie["image"] ?> width="80" height="80"></td>
+    <td class=""><img src="../../../assets/movie_image/<?= $movie["image"] ?>" width="80" height="80"></td>
         <td class="px-6 py-3"><?= $movie["movie_name"] ?></td>
         <td class="px-6 py-3"><?= $movie["genre"] ?></td>
         <td class="px-6 py-3"><?= $movie["release_date"] ?></td>
