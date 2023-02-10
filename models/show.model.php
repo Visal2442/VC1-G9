@@ -5,7 +5,6 @@ function getShows(): array
     global $connection;
     $statement = $connection->prepare(' select show_id, image, movie_name, venue_name, hall, date, time, price_per_ticket from movies
                                         inner join shows on movies.movie_id = shows.movie_id 
-                                        inner join dates_format on dates_format.date_id = shows.date_id
                                         inner join venues on venues.venue_id = shows.venue_id
                                         ORDER BY movies.movie_name');
     $statement->execute();
@@ -16,7 +15,7 @@ function getShows(): array
 function getShowsForCard() : array
 {
     global $connection;
-    $statement = $connection->prepare(' select distinct movies.movie_id, image, movie_name, genre, duration,release_date from shows
+    $statement = $connection->prepare(' select distinct movies.movie_id, image, movie_name, genre, duration, release_date from shows
                                         inner join movies on movies.movie_id = shows.movie_id');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
