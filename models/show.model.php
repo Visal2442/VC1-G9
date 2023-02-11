@@ -67,6 +67,16 @@ function updateShow(string $show_id, string $movie_id, string $venue_id, string 
     return $statement->rowCount()>0;
 }
 
+// Delete show 
+function deleteShow($show_id):bool
+{
+    global $connection;
+    $statement = $connection->prepare('delete from shows where show_id=:show_id');
+    $statement->execute([
+        ":show_id" => $show_id
+    ]);
+    return $statement->rowCount()>0;
+}
 
 // Search for show 
 function searchShow(string $input): array
