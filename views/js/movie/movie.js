@@ -1,5 +1,14 @@
 $(document).ready(function () {
   displayMovie();
+
+  // Date picker 
+  $("#release_date").datepicker({
+    changeMonth: true,
+    changeYear: true,
+    dateFormat: "d M yy",
+  });
+
+
   // Add Movie
   $("#create_movie_form").on("submit", function (e) {
     e.preventDefault();

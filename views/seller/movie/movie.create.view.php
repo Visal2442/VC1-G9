@@ -3,7 +3,7 @@
         <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
             <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
                 <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">Add movie</h5>
-                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body relative p-4">
                 <form action="#" method="post" class="ml-2.5" id="create_movie_form">
@@ -34,16 +34,15 @@
                     <div class="movie-genre ml-2 mb-2 mr-5">
                         <label for="genre" class=" text-black"> Genre </label>
                         <select type="text" id="genre" name="genre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
-                            <option selected >Choose a movie</option>
-                            <option value="Action">Action </option>
-                            <option value="Drama">Drama</option>
-                            <option value="Holiwood">Holiwood </option>
-                            <option value="Adventure">Adventure</option>
-                            </select>
+                            <option disabled selected>Choose a genre</option>
+                            <?php foreach ($genres as $genre) : ?>
+                                <option value="<?= $genre?>"><?= $genre?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="movie-releasedate ml-2 mb-2 mr-5">
                         <label for="release_date" class=" text-black"> Release Date</label>
-                        <input type="date" id="release_date" name="release_date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                        <input type="text" id="release_date" name="release_date" placeholder="DD/MM/YY" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
                     </div>
                     <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-gray-200 rounded-b-md">
                         <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">CANCEL</button>

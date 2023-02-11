@@ -16,7 +16,7 @@ function getShowsForCard(): array
 {
     global $connection;
     $statement = $connection->prepare(' select distinct movies.movie_id, image, movie_name, genre, duration, release_date from shows
-                                        inner join movies on movies.movie_id = shows.movie_id');
+                                        inner join movies on movies.movie_id = shows.movie_id order by movies.release_date desc');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -38,7 +38,7 @@ function createShow(string $movie_id, string $venue_id, string $date, string $ti
     return $statement->rowCount() > 0;
 }
 
-// Get show by id 
+// Get show by movie id 
 function getShowByMovieId($movie_id): array
 {
     global $connection;
@@ -49,6 +49,19 @@ function getShowByMovieId($movie_id): array
         ":movie_id" => $movie_id
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Get show by id 
+function getShowById($show_id):array 
+{
+    global $connection;
+    $statement = $connection->prepare('select * from shows
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        where shows.show_id = :show_id');
+    $statement->execute([
+        ":show_id" => $show_id
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
 // Update show 
