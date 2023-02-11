@@ -85,7 +85,7 @@ function deleteVenue(venue_id, venue_modal) {
     data: {
       venue_id: venue_id,
     },
-    success: function (data) {
+    success: function () {
       $(venue_modal).modal("hide");
       displayVenue();
     },

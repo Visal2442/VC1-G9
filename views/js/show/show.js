@@ -91,5 +91,19 @@ function updateShow(show_id)
       }
     },
   });
-  
+}
+
+// Delete Venue
+function deleteShow(show_id, show_modal) {
+  $.ajax({
+    url: "controllers/seller/show/show.delete.controller.php",
+    method: "POST",
+    data: {
+      show_id: show_id,
+    },
+    success: function () {
+      $(show_modal).modal("hide");
+      displayShow();
+    },
+  });
 }

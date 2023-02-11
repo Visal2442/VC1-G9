@@ -28,7 +28,7 @@ foreach ($shows as $show) :
             <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="<?= $show_modal ?>">
                 <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
                     <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-                        <div class="modal-body p-4 text-lg text-red-600">
+                        <div class="modal-body p-4 text-lg text-left text-red-600">
                             <p>Do you want to delete?</p>
                         </div>
                         <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 rounded-b-md">
