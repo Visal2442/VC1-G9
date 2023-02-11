@@ -20,13 +20,13 @@ if(isset($_COOKIE['username'])){
             </a>
             <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                 <li class="nav-item p-2 md:ml-5">
-                    <a href="/" class="text-white text-lg hover:text-yellow-400 sm:my-6 active:text-red-600">Home</a>
+                    <a href="/" class="<?=urlIs('/')?"text-yellow-400":"text-white "?> text-lg hover:text-yellow-600 sm:my-6">Home</a>
                 </li>
                 <li class="nav-item p-2 md:ml-5">
-                    <a href="#" class="text-white text-lg hover:text-yellow-400 sm:my-6 active:text-red-600">About Us</a>
+                    <a href="#" class="<?=urlIs('/contact')?"text-yellow-400":"text-white "?> text-lg hover:text-yellow-600 sm:my-6">About Us</a>
                 </li>
                 <li class="nav-item p-2 md:ml-5">
-                    <a href="#" class="text-white text-lg hover:text-yellow-400 sm:my-6 active:text-red-600">Contact Us</a>
+                    <a href="#" class="<?=urlIs('/about')?"text-yellow-400":"text-white "?> text-lg hover:text-yellow-600 sm:my-6">Contact Us</a>
                 </li>
             </ul>
         </div>

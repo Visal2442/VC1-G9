@@ -1,6 +1,7 @@
 <ul class="nav nav-tabs flex flex-row justify-center md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 mt-5 ml-10 gap-10" id="tabs-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <a href="#tabs-home" class="link block text-sm font-bold text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home" aria-selected="true" autofocus>All Genres</a></li>
+        <a href="#tabs-home" class="link block text-sm font-bold text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home" aria-selected="true" autofocus>All Genres</a>
+    </li>
     <li class="nav-item" role="presentation">
         <a href="#tabs-profile" class="link block text-sm font-bold text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab" aria-controls="tabs-profile" aria-selected="false">Action</a>
     </li>
@@ -16,7 +17,7 @@
             ?>
                 <div class="flex flex-col justify-center mb-10">
                     <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                    <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image object-cover transition-all duration-500">
+                        <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image object-cover transition-all duration-500">
                         <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                         </div>
                         <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
@@ -53,9 +54,9 @@
             <?php foreach ($shows as $show) :
                 if (strtolower($show['genre']) === "action") :
             ?>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mb-10">
                         <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                            <img src="../../assets/movie_image/<?= $show['image']; ?>" alt="" class=" card-image object-cover transition-all duration-500">
+                            <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image object-cover transition-all duration-500">
                             <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                             </div>
                             <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
@@ -93,9 +94,9 @@
             <?php foreach ($shows as $show) :
                 if (strtolower($show['genre']) === "horror") :
             ?>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mb-10">
                         <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                            <img src="../../assets/movie_image/<?= $show['image']; ?>" alt="" class=" card-image object-cover transition-all duration-500">
+                            <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image object-cover transition-all duration-500">
                             <div class=" absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                             </div>
                             <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">

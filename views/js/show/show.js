@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(function () 
+{
   displayShow();
 
   // Date picker
@@ -10,7 +11,8 @@ $(document).ready(function () {
   });
 
   // Add new show
-  $("#create_show_form").on("submit", function (e) {
+  $("#create_show_form").on("submit", function (e) 
+  {
     e.preventDefault();
     let form_data = new FormData(this);
     $.ajax({
@@ -24,6 +26,9 @@ $(document).ready(function () {
           $("#createShow").modal("hide");
           $("#create_show_form").trigger("reset");
           displayShow();
+        }
+        else{
+          
         }
       },
     });
@@ -59,7 +64,7 @@ function editShow(show_id)
   });
 }
 
-// // Update show
+// Update show
 function updateShow(show_id) 
 {
   let title = $("#edit_title").val();
@@ -94,7 +99,8 @@ function updateShow(show_id)
 }
 
 // Delete Venue
-function deleteShow(show_id, show_modal) {
+function deleteShow(show_id, show_modal) 
+{
   $.ajax({
     url: "controllers/seller/show/show.delete.controller.php",
     method: "POST",

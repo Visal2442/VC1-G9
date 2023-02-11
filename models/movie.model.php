@@ -24,3 +24,14 @@ function addMovie(string $movie_name, string $genre, string $subtitle, string $d
     ]);
     return $statement->rowCount() > 0;
 }
+
+// Get movie by id 
+function getMovieById($movie_id): array
+{
+    global $connection;
+    $statement = $connection->prepare('select * from movies where movie_id = :movie_id');
+    $statement->execute([
+        ":movie_id" => $movie_id
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}

@@ -39,14 +39,16 @@ function createShow(string $movie_id, string $venue_id, string $date, string $ti
 }
 
 // Get show by id 
-function getShowById($show_id): array
+function getShowByMovieId($movie_id): array
 {
     global $connection;
-    $statement = $connection->prepare('select * from shows where show_id = :show_id');
+    $statement = $connection->prepare(' select * from shows
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        where movies.movie_id = :movie_id');
     $statement->execute([
-        ":show_id" => $show_id
+        ":movie_id" => $movie_id
     ]);
-    return $statement->fetch(PDO::FETCH_ASSOC);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // Update show 
@@ -82,7 +84,9 @@ function deleteShow($show_id):bool
 function searchShow(string $input): array
 {
     global $connection;
-    $statement = $connection->prepare("select * from movies where movie_name like '%$input%' ");
+    $statement = $connection->prepare(" select distinct movies.movie_name, movies.movie_id from shows 
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        where movies.movie_name like '%$input%' ");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
