@@ -2,5 +2,6 @@
 require 'models/show.model.php';
 
 $shows= getShowsForCard();
-$genres = ['Action', 'Horror', 'Adventure', ' Thriller', 'Comedy', 'Fantasy', 'Animation', 'Mystery'];
+$genres = ['All','Action', 'Horror', 'Adventure', 'Comedy', 'Fantasy', 'Mystery'];
+
 require "views/home/index.view.php";
