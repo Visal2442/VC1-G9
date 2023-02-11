@@ -2,21 +2,26 @@
 
 require '../../../database/database.php';
 require '../../../models/show.model.php';
-$shows = getShows();
+$shows = getAllShows();
 foreach ($shows as $show) :
     $show_modal = "deleteShow" . $show['show_id'];
-    $time = date("h:i", strtotime($show['time']));
+    if($show['time']<"12:00"){
+        $time= $show['time']." AM";
+    }
+    else{
+        $time= $show['time']." PM";
+    }
 ?>
     <tr class="font-medium text-gray-300 dark:text-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 border-b-2 border-gray-400">
-        <td class=""><img src=<?= $show["image"] ?> width="80" height="80"></td>
+        <td class=""><img src="../../../assets/movie_image/<?= $show["image"] ?>" width="80" height="80"></td>
         <td class="px-6 py-3"><?= $show["movie_name"] ?></td>
         <td class="px-6 py-3"><?= $show["venue_name"] ?></td>
         <td class="px-6 py-3"><?= $show["hall"] ?></td>
         <td class="px-6 py-3"><?= $show["date"] ?></td>
         <td class="px-6 py-3"><?= $time ?></td>
-        <td class="px-6 py-3"><?= $show["price_per_ticket"] ?></td>
+        <td class="px-6 py-3"><?= $show["price_per_ticket"]?>$</td>
         <td class="px-6 py-3">
-            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:text-red-500" onclick="editshow(<?= $show['show_id'] ?>)">Edit</a> <span class="font-bold">|</span>
+            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:text-red-500" onclick="editShow(<?= $show['show_id'] ?>)">Edit</a> <span class="font-bold">|</span>
             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:text-red-500" data-bs-toggle="modal" data-bs-target="<?= '#' . $show_modal ?>">Delete</a>
         </td>
         <td>

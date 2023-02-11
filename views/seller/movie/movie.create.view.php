@@ -8,32 +8,32 @@
             <div class="modal-body relative p-4">
                 <form action="#" method="post" class="ml-2.5" id="create_movie_form">
                     <div class="form-movie ml-2 mb-2 mr-5">
-                        <label for="name" class=" text-black">Name </label>
-                        <input type="text" id="movie_name" name="movie_name" class="bg-gray-50 rounded border-black text-gray-900 text-sm block w-full p-2.5  outline-none border " placeholder="movie name">
+                        <label for="name" class=" text-black">Movie Title </label>
+                        <input type="text" id="movie_name" name="movie_name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Movie Title">
                     </div>
                     <div class="movie-image ml-2 mb-2 mr-5">
                         <label for="image" class=" text-black"> Image </label>
-                        <input type="file" id="image" name="image" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="image">
+                        <input type="file" id="image" name="image" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
                     </div>
                     <div class="movie-duration ml-2 mb-2 mr-5">
                         <label for="duration" class=" text-black"> Duration </label>
-                        <input type="text" id="duration" name="duration" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="duration">
+                        <input type="text" id="duration" name="duration" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Duration">
                     </div>
                     <div class="movie-subtitle ml-2 mb-2 mr-5">
                         <label for="subtitle" class=" text-black"> Subtitle</label>
-                        <input type="text" id="subtitle" name="subtitle" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="subtitle">
+                        <input type="text" id="subtitle" name="subtitle" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Subtitle">
                     </div>
                     <div class="movie-description ml-2 mb-2 mr-5">
                         <label for="description" class=" text-black"> Description </label>
-                        <input type="text" id="description" name="description" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="description">
+                        <input type="text" id="description" name="description" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Movie Description">
                     </div>
                     <div class="movie-trailer ml-2 mb-2 mr-5">
                         <label for="trailer" class=" text-black">Trailer</label>
-                        <input type="text" id="trailer" name="trailer" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="trailer">
+                        <input type="text" id="trailer" name="trailer" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="url">
                     </div>
                     <div class="movie-genre ml-2 mb-2 mr-5">
                         <label for="genre" class=" text-black"> Genre </label>
-                        <select type="text" id="genre" name="genre" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border " placeholder="genre ">
+                        <select type="text" id="genre" name="genre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
                             <option selected >Choose a movie</option>
                             <option value="Action">Action </option>
                             <option value="Drama">Drama</option>
@@ -43,11 +43,11 @@
                     </div>
                     <div class="movie-releasedate ml-2 mb-2 mr-5">
                         <label for="release_date" class=" text-black"> Release Date</label>
-                        <input type="date" id="release_date" name="release_date" class="bg-gray-50 rounded border-black text-gray-900 text-sm  block w-full p-2.5  outline-none border ">
+                        <input type="date" id="release_date" name="release_date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
                     </div>
                     <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-gray-200 rounded-b-md">
                         <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">CANCEL</button>
-                        <button type="submit" class="ml-3 px-4 py-2 bg-blue-600 text-white  text-xs leading-tight uppercase rounded shadow-md ">ADD</button>
+                        <button type="submit" class="ml-3 px-6 py-2.5 bg-blue-600 text-white  text-xs leading-tight uppercase rounded shadow-md ">ADD</button>
                     </div>
                 </form>
             </div>

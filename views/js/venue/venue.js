@@ -30,12 +30,10 @@ function addVenue() {
         $("#createVenue").modal("hide");
         form.trigger("reset");
         displayVenue();
-      }else{
-        alert("Fill cannot be empty")
+      } else {
+        alert("Fill cannot be empty");
       }
-
     },
-
   });
 }
 
@@ -90,7 +88,6 @@ function deleteVenue(venue_id, venue_modal) {
     success: function (data) {
       $(venue_modal).modal("hide");
       displayVenue();
-      console.log(data);
     },
   });
 }

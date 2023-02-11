@@ -2,7 +2,7 @@
 
 require '../../../database/database.php';
 require '../../../models/movie.model.php';
-$movies=getMovies();
+$movies=getAllMovies();
 foreach ($movies as $movie) :
     $movie_modal = "deleteMovie" . $movie['movie_id'];
 ?>

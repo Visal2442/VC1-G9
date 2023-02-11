@@ -1,5 +1,7 @@
 
-<?php require("views/seller/show/show.create.view.php")?>
+<?php require "views/seller/show/show.create.view.php"?>
+<?php require "views/seller/show/show.edit.view.php" ?>
+
 <div class="tab-pane fade text-white" id="tab-show">
     <div class="w-full flex justify-between items-center p-4 mb-5 bg-slate-800 shadow-lg">
         <h1> Welcome To Show Page</h1>
@@ -14,7 +16,7 @@
             <button type="button" class="bg-blue-600 p-2 rounded text-white"><a href="/">Visit Site</a></button>
         </div>
     </div>
-    <h1 class="text-2xl font-bold border-b-2 border-slate-400 py-8 mb-5">SHOWS</h1>
+    <h1 class="text-2xl font-bold border-b-2 border-slate-400 py-8 mb-5">SHOWING</h1>
     <div class="table-movie mt-5 p-4 shadow-lg bg-slate-800">
         <div class="flex justify-between items-center">
             <h1 class="font-bold mb-5">All Showing</h1>

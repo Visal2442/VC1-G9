@@ -2,7 +2,7 @@
 
 require '../../../database/database.php';
 require '../../../models/venue.model.php';
-$venues = getVenues();
+$venues = getAllVenues();
 foreach ($venues as $venue) :
     $venue_modal = "deleteVenue" . $venue['venue_id'];
 ?>

@@ -1,6 +1,6 @@
 <?php
 // Get all venues
-function getVenues(): array
+function getAllVenues(): array
 {
     global $connection;
     $statement = $connection->prepare('select * from venues');

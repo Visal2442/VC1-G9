@@ -18,9 +18,6 @@
     <li class="nav-item flex-grow">
       <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-venue" aria-selected="false">Venues</a>
     </li>
-    <li class="nav-item flex-grow">
-      <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-date" aria-selected="false">Date</a>
-    </li>
     <!-- User  -->
     <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">USERS</li>
     <li class="nav-item flex-grow">
@@ -70,14 +67,10 @@
 
     <!--All Shows -->
    <?php require 'views/seller/show/show.view.php' ?>
-
     <!-- All Movies -->
    <?php require 'views/seller/movie/movie.view.php' ?>
-
     <!-- All Venues -->
     <?php require 'views/seller/venue/venue.view.php' ?>
-    <!-- All date -->
-    <?php require 'views/seller/date/date.view.php' ?>
 
     <!-- User  -->
     <div class="tab-pane fade text-white" id="user">

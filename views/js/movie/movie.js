@@ -19,15 +19,15 @@ $(document).ready(function () {
             displayMovie();
           }else if(data =="wrong_exs")
           {
-              alert("You cannot uplaod file of this type.");
+              alert("You cannot uplaod file of this type");
           }
           else if(data=="size_too_large")
           {
-              alert("Your image is too large.");
+              alert("Image is too large.");
           }
           else
           {
-              alert("Fill cannot be empty.")
+              alert("Input cannot be empty!")
           }
         }
 

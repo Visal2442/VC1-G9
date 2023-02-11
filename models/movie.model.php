@@ -1,6 +1,6 @@
 <?php
 // Get all movies
-function getMovies(): array
+function getAllMovies(): array
 {
     global $connection;
     $statement = $connection->prepare('select * from movies');
