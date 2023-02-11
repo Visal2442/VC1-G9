@@ -3,7 +3,7 @@
 function getAllShows(): array
 {
     global $connection;
-    $statement = $connection->prepare(' select show_id, image, movie_name, venue_name, hall, date, time, price_per_ticket from movies
+    $statement = $connection->prepare(' select shows.*, venues.*, movies.* from movies
                                         inner join shows on movies.movie_id = shows.movie_id 
                                         inner join venues on venues.venue_id = shows.venue_id
                                         ORDER BY shows.date');
@@ -12,26 +12,12 @@ function getAllShows(): array
 }
 
 // Get all show for dispaly in card 
-function getShowsForCard() : array
+function getShowsForCard(): array
 {
     global $connection;
     $statement = $connection->prepare(' select distinct movies.movie_id, image, movie_name, genre, duration, release_date from shows
                                         inner join movies on movies.movie_id = shows.movie_id');
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
-
-// Get show by Id 
-function getShowById($id) : array
-{
-    global $connection;
-    $statement = $connection->prepare(' SELECT venues.*, movies.*, shows.* FROM shows
-                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
-                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
-                                        WHERE movies.movie_id = :movie_id');
-    $statement->execute([
-        ":movie_id" => $id
-    ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -51,6 +37,36 @@ function createShow(string $movie_id, string $venue_id, string $date, string $ti
     ]);
     return $statement->rowCount() > 0;
 }
+
+// Get show by id 
+function getShowById($show_id): array
+{
+    global $connection;
+    $statement = $connection->prepare('select * from shows where show_id = :show_id');
+    $statement->execute([
+        ":show_id" => $show_id
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Update show 
+function updateShow(string $show_id, string $movie_id, string $venue_id, string $date, string $time, string $ticket_price, string $hall): bool
+{
+    global $connection;
+    $statement = $connection->prepare('update shows set movie_id = :movie_id, venue_id = :venue_id, date = :date, time = :time, amount_ticket = :amount_ticket, price_per_ticket = :ticket_price, hall = :hall where show_id = :show_id');
+    $statement->execute([
+        ":show_id" => $show_id,
+        ":movie_id" => $movie_id,
+        ":venue_id" => $venue_id,
+        ":date" => $date,
+        ":time" => $time,
+        ":amount_ticket" => 0,
+        ":ticket_price" => $ticket_price,
+        ":hall" => $hall
+    ]);
+    return $statement->rowCount()>0;
+}
+
 
 // Search for show 
 function searchShow(string $input): array
