@@ -50,7 +50,7 @@ if (isset($_COOKIE['username'])) {
     </div>
 </div>
 <div class="video w-full p-10">
-    <iframe class="m-auto" <?= $shows[0]['trailer'] ?>></iframe>
+    <?= $shows[0]["trailer"] ?>
 </div>
 
 
