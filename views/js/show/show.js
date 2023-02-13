@@ -28,7 +28,7 @@ $(document).ready(function ()
           displayShow();
         }
         else{
-          
+          alert(data);
         }
       },
     });
