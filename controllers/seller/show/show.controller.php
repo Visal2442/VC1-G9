@@ -29,7 +29,7 @@ foreach ($shows as $show) :
                 <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
                     <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
                         <div class="modal-body p-4 text-lg text-left text-red-600">
-                            <p>Do you want to delete?</p>
+                            <p>Do you want to delete this show ?</p>
                         </div>
                         <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 rounded-b-md">
                             <button type="button" class="bg-gray-100 hover:bg-gray-200 px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase border transition duration-150 ease-in-out rounded " data-bs-dismiss="modal">Cancle</button>
