@@ -42,19 +42,34 @@ $(document).ready(function () {
 
       });
   });
-   // Display Movies
-   function displayMovie() {
-    $.ajax({
-      url: "controllers/seller/movie/movie.controller.php",
-      method: "GET",
-      success: function (data) {
-        $("#t-movie").html(data);
-      },
-    });
-  }
-
 });
- 
+
+ // Display Movies
+ function displayMovie() {
+  $.ajax({
+    url: "controllers/seller/movie/movie.controller.php",
+    method: "GET",
+    success: function (data) {
+      $("#t-movie").html(data);
+    },
+  });
+}
+ // Delete Venue
+function deleteMovie(movie_id, movie_modal){
+  $.ajax({
+    url: "controllers/seller/movie/movie.delete.controller.php",
+    method: "POST",
+    data: {
+      movie_id: movie_id,
+    },
+    success: function (data) {
+      console.log(data);
+      $(movie_modal).modal("hide");
+      displayMovie();
+     
+    },
+  });
+}
 
 
 

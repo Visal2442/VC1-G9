@@ -35,3 +35,11 @@ function getMovieById($movie_id): array
     ]);
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
+///delete movie
+function deleteMovie(int $movie_id) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("delete from movies where movie_id = :movie_id");
+    $statement->execute([":movie_id" => $movie_id]);
+    return $statement->rowCount() > 0;
+}
