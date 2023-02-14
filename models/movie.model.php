@@ -15,7 +15,7 @@ function addMovie(string $movie_name, string $genre, string $subtitle, string $d
     $statement->execute([
         ":movie_name" => $movie_name,
         ":genre" => $genre,
-        ":subtitle"=>$subtitle,
+        ":subtitle" => $subtitle,
         ":description" => $description,
         ":release_date" => $release_date,
         ":duration" => $duration,
@@ -34,4 +34,26 @@ function getMovieById($movie_id): array
         ":movie_id" => $movie_id
     ]);
     return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Get movie by name 
+function getMovieByName($movie_name) 
+{
+    global $connection;
+    $statement = $connection->prepare('select * from movies where movie_name = :movie_name');
+    $statement ->execute([
+        ":movie_name" => $movie_name
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Delete movie 
+function deleteMovie($movie_id): bool
+{
+    global $connection;
+    $statement = $connection->prepare('delete from movies where movie_id = :movie_id');
+    $statement->execute([
+        ":movie_id" => $movie_id
+    ]);
+    return $statement->rowCount() > 0;
 }

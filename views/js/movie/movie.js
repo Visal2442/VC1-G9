@@ -21,22 +21,20 @@ $(document).ready(function () {
         contentType: false,
         processData: false,
         success: function (data) {
-          if (data == "success") 
-          {
+          if (data == "success") {
             $("#createMovie").modal("hide");
             form.trigger("reset");
             displayMovie();
-          }else if(data =="wrong_exs")
-          {
-              alert("You cannot uplaod file of this type");
-          }
-          else if(data=="size_too_large")
-          {
-              alert("Image is too large.");
-          }
-          else
-          {
-              alert("Input cannot be empty!")
+          } else if (data == "Extension doesn't support") {
+            alert("You cannot uplaod file of this type");
+          } else if (data == "size_too_large") {
+            alert("Image is too large.");
+          } else if (data == "This movie is already exists") {
+            alert(data);
+          } else if (data == "Error pattern") {
+            alert("Inpu t does not match the pattern");
+          } else {
+            alert("Input cannot be empty!");
           }
         }
 

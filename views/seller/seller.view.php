@@ -1,29 +1,31 @@
 <?php require 'views/partials/seller.head.php' ?>
 
 <div class="flex items-start">
-  <ul class="nav nav-tabs flex flex-col flex-wrap list-none border-b-0 pl-1 bg-slate-800 pt-0 pb-6 px-10 mr-4" style="height:80vh;" id="tabs-tabVertical" role="tablist">
-    <img src="assets/logo/cinema-logo.png" alt="Logo" width="200" height="100" class="text-center">
-    <li class="nav-item flex-grow text-lg font-semibold mt-5 px-6 text-gray-200">DASHBOARD</li>
-    <li class="nav-item flex-grow">
-      <a href="" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100 focus:border-transparent active text-gray-200" data-bs-toggle="pill" data-bs-target="#tab-home" aria-selected="true">HOME</a>
-    </li>
-    <!-- Movie  -->
-    <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">MOVIES</li>
-    <li class="nav-item flex-grow">
-      <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100  text-white" data-bs-toggle="pill" data-bs-target="#tab-show" aria-selected="false">SHOWING MOVIES</a>
-    </li>
-    <li class="nav-item flex-grow">
-      <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-allMovie" aria-selected="false">Movies</a>
-    </li>
-    <li class="nav-item flex-grow">
-      <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-venue" aria-selected="false">Venues</a>
-    </li>
-    <!-- User  -->
-    <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">USERS</li>
-    <li class="nav-item flex-grow">
-      <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100 focus:border-transparent" data-bs-toggle="pill" data-bs-target="#user" aria-selected="false">User Accounts</a>
-    </li>
-  </ul>
+  <div class="w-72 h-screen bg-slate-800">
+    <ul class="nav nav-tabs flex flex-col list-none border-b-0 pt-0 pb-6 pl-1 px-10 gap-3" id="tabs-tabVertical" role="tablist">
+      <img src="assets/logo/cinema-logo.png" alt="Logo" width="200" height="100" class="text-center">
+      <li class="nav-item flex-grow text-lg font-semibold mt-5 px-6 text-gray-200">DASHBOARD</li>
+      <li class="nav-item flex-grow">
+        <a href="" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100 focus:border-transparent active" data-bs-toggle="pill" data-bs-target="#tab-home">HOME</a>
+      </li>
+      <!-- Movie  -->
+      <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">MOVIES</li>
+      <li class="nav-item flex-grow">
+        <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100  text-white" data-bs-toggle="pill" data-bs-target="#tab-show">SHOWING MOVIES</a>
+      </li>
+      <li class="nav-item flex-grow">
+        <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-allMovie">Movies</a>
+      </li>
+      <li class="nav-item flex-grow">
+        <a href="#" class=" nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="#tab-venue">Venues</a>
+      </li>
+      <!-- User  -->
+      <li class="nav-item flex-grow text-lg font-semibold px-6 mt-3 text-gray-200">USERS</li>
+      <li class="nav-item flex-grow">
+        <a href="#" class="nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-1 my-1 hover:border-transparent hover:bg-gray-100 focus:border-transparent" data-bs-toggle="pill" data-bs-target="#user">Customer Accounts</a>
+      </li>
+    </ul>
+  </div>
 
   <div class="tab-content w-full m-5 text-white" id="tabs-tabContentVertical">
     <!-- Home  -->
