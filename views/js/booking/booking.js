@@ -14,7 +14,7 @@ $(document).ready(function(){
             }
         })
     })
-
+    // Select venue 
     $('#venue').on('change', function(){
         let venue_id = this.value;
         $.ajax({
@@ -29,7 +29,7 @@ $(document).ready(function(){
             }
         })
     })
-
+    // Select hall 
     $('#hall').on('change', function(){
         let hall = this.value;
         $.ajax({
@@ -45,18 +45,19 @@ $(document).ready(function(){
         })
     })
 
+    // Booking ticket 
     $('#booking_form').on('submit',function(e){
         e.preventDefault();
-        $.ajax({
-            url:'controllers/payment/payment.controller.php',
-            type:'POST',
-            data:{
-                form_data:$("#booking_form").serialize()
-            },
-            success:function(data){
-                console.log(data);
+        let datas = new FormData(this);
+          $.ajax({
+            url: "controllers/payment/payment.controller.php",
+            method: "post",
+            data: datas,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
             }
-        })
-    
+        });
     });
 });

@@ -26,11 +26,12 @@
             </div>
         </div>
     
-        <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 m-auto grid gap-2" id="create_movie_form" enctype="multipart/form-data">
+        <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 m-auto grid gap-2" enctype="multipart/form-data">
             <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
             <div class="form-movie ml-2 mb-2 mr-5">
                 <label for="name" class=" ">Movie Title </label>
-                <input type="text" disabled value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Movie Title">
+                <input type="hidden" value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name">
+                <input type="text" disabled value="<?= $shows[0]['movie_name'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0" placeholder="Movie Title">
             </div>
             <div class="movie-genre ml-2 mb-2 mr-5">
                 <label for="showing_date" class=" "> Showing Date </label>
@@ -60,8 +61,8 @@
                 </select>
             </div>
             <div class="movie-releasedate ml-2 mb-2 mr-5">
-                <label for="release_date" class=" "> Booking Date</label>
-                <input type="text" id="release_date" name="release_date" placeholder="DD/MM/YY" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                <label for="booking_date" class=" "> Booking Date</label>
+                <input type="text" id="booking_date" name="booking_date" placeholder="DD/MM/YY" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
             </div>
             <div class="ml-2 mb-2 mr-5">
                 <label for="seat_number" class=" "> Seat Number</label>
