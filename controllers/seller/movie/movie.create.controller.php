@@ -13,7 +13,6 @@ if(isset($_POST["movie_name"]) && isset($_POST["genre"]) && isset($_POST["durati
         else
         {
             $img_ex= pathinfo($img_name, PATHINFO_EXTENSION);
-            // echo $img_ex;
             $img_ex_lc= strtolower($img_ex);
 
             $allowed_exs= array("jpg", "jpeg", "png");
