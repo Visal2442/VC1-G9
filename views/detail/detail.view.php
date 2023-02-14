@@ -52,6 +52,6 @@ if (isset($_COOKIE['username'])) {
 <div class="video w-full p-10">
     <iframe class="m-auto" <?= $shows[0]['trailer'] ?>></iframe>
 </div>
-
+<?php require("views/seats/seat.view.php");?>
 
 <?php require 'views/partials/footer.php'; ?>
