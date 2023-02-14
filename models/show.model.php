@@ -52,7 +52,7 @@ function getShowByMovieId($movie_id): array
 }
 
 // Get show by id 
-function getShowById($show_id):array 
+function getShowById($show_id): array
 {
     global $connection;
     $statement = $connection->prepare('select * from shows
@@ -79,18 +79,75 @@ function updateShow(string $show_id, string $movie_id, string $venue_id, string 
         ":ticket_price" => $ticket_price,
         ":hall" => $hall
     ]);
-    return $statement->rowCount()>0;
+    return $statement->rowCount() > 0;
 }
 
 // Delete show 
-function deleteShow($show_id):bool
+function deleteShow(int $show_id): bool
 {
     global $connection;
     $statement = $connection->prepare('delete from shows where show_id=:show_id');
     $statement->execute([
         ":show_id" => $show_id
     ]);
-    return $statement->rowCount()>0;
+    return $statement->rowCount() > 0;
+}
+// Get show date 
+function getShowDate(int $movie_id): array
+{
+    global $connection;
+    $statement = $connection->prepare('SELECT DISTINCT shows.date FROM shows 
+                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
+                                        WHERE movies.movie_id = :movie_id');
+    $statement->execute([
+        ":movie_id" => $movie_id
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+// Get venues 
+function getVenues(int $movie_id ,string $showing_date): array
+{
+    global $connection;
+    $statement = $connection->prepare('SELECT DISTINCT venues.venue_id, venues.venue_name FROM shows 
+                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
+                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
+                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date');
+    $statement->execute([
+        ":movie_id" => $movie_id,
+        ":showing_date" => $showing_date
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+// Get Halls 
+function getHalls(int $movie_id, string $showing_date, int $venue_id): array 
+{
+    global $connection;
+    $statement = $connection->prepare('SELECT DISTINCT shows.hall FROM shows 
+                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
+                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
+                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date AND venues.venue_id = :venue_id');
+    $statement->execute([
+        ":movie_id" => $movie_id,
+        ":showing_date" => $showing_date,
+        ":venue_id" => $venue_id,
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+// Get times 
+function getTimes(int $movie_id, string $showing_date, int $venue_id, string $hall):array
+{
+    global $connection;
+    $statement = $connection->prepare('SELECT DISTINCT time FROM shows 
+                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
+                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
+                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date AND venues.venue_id = :venue_id AND shows.hall = :hall');
+    $statement->execute([
+        ":movie_id" => $movie_id,
+        ":showing_date" => $showing_date,
+        ":venue_id" => $venue_id,
+        ":hall"=>$hall
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // Search for show 

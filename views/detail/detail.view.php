@@ -2,8 +2,10 @@
 <?php require 'views/partials/nav.php'; ?>
 <?php
 if (isset($_COOKIE['username'])) {
-    $url = "/";
+    $is_login=true;
+    $url="";
 } else {
+    $is_login=false;
     $url = "/login?login";
 }
 ?>
@@ -42,16 +44,17 @@ if (isset($_COOKIE['username'])) {
             <p class="font-semibold hidden md:block text-lg text-gray-300">Ticket</p>
             <p>: <?= $shows[0]["price_per_ticket"] ?> $</p>
         </div>
-        <div class="flex md:block">
-            <p class="font-semibold hidden md:block text-lg text-gray-300">Description:</p>
-            <p><?= $shows[0]['description'] ?></p>
+        <div class="flex items-center">
+            <p class="font-semibold hidden md:block text-lg text-gray-300">Description</p>
+            <p>: <?= $shows[0]['description']?></p>
         </div>
-        <button class="bg-yellow-400 rounded w-36 p-1 text-black mt-2"><a href="<?= $url; ?>">BOOK TICKET</a></button>
+        <button type="button" id="show_time" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2" <?=$is_login?'data-bs-toggle="collapse" data-bs-target="#seat"':'' ?>><a href="<?= $url; ?>">SHOW TIME</a></button>
     </div>
 </div>
 <div class="video w-full p-10">
     <?= $shows[0]["trailer"] ?>
 </div>
-<?php require("views/seats/seat.view.php");?>
 
+<?php require("views/booking/booking.view.php"); ?>
+<script src="views/js/booking/booking.js"></script>
 <?php require 'views/partials/footer.php'; ?>
