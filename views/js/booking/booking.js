@@ -22,7 +22,7 @@ $(document).ready(function () {
       },
     });
   });
-  // Select venue
+  // ==== Select venue =====
   $("#venue").on("change", function () {
     let venue_id = this.value;
     $.ajax({
@@ -37,7 +37,7 @@ $(document).ready(function () {
       },
     });
   });
-  // Select hall
+  // ==== Select hall ====
   $("#hall").on("change", function () {
     let hall = this.value;
     $.ajax({
@@ -52,6 +52,7 @@ $(document).ready(function () {
       },
     });
   });
+  // ==== Select time =====
   $("#time").on("change", function () {
     let time = this.value;
     $.ajax({
@@ -64,6 +65,8 @@ $(document).ready(function () {
       success: function (data) {
         $("#seat_container").show();
         $("#seat_view").html(data);
+        $('#seat').collapse(true);
+        showTime()
       },
     });
   });
@@ -86,7 +89,7 @@ $(document).ready(function () {
   });
 });
 
-// Select seat
+// ====== Select seat =======
 let seat_arr = [];
 let total_price = 0;
 let price = document.getElementById("price").value;
@@ -96,21 +99,18 @@ function selectSeat(seat) {
   let no_seat = document.getElementById("no_seat");
   let seat_number = document.getElementById("seat_number");
   if (seat.checked) {
-    // seat.disabled=true;
     if (seat_arr.indexOf(seat.value) === -1) {
       seat_arr.push(seat.value);
-      seat.previousElementSibling.firstChild.src =
-        "../../../assets/profile/Default_pf.png";
+      seat.previousElementSibling.firstChild.src = "../../../assets/profile/Default_pf.png";
     }
   } else {
     let seat_index = seat_arr.indexOf(seat.value);
     if (seat_index > -1) {
       seat_arr.splice(seat_index, 1);
-      seat.previousElementSibling.firstChild.src =
-        "../../../assets/movie_image/IMG-63e64199827b62.71458816.jpg";
+      seat.previousElementSibling.firstChild.src = "../../../assets/logo/chair.png";
     }
   }
-  // Add value into input
+  // ==== Add value into input ===
   total_price = price * seat_arr.length;
   t_price.value = total_price + "$";
   no_seat.value = seat_arr;

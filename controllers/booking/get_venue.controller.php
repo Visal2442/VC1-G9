@@ -6,7 +6,7 @@ if (isset($_POST['showing_date'])) {
     require '../../models/show.model.php';
     $venues = getVenues($_POST['movie_id'], $_POST['showing_date']);
 ?>
-    <option value="" disabled selected>Choose a venue</option>
+    <option disabled selected>Choose Venue/Cinema</option>
     <?php foreach ($venues as $venue) : ?>
         <option value="<?= $venue['venue_id'] ?>"><?= $venue['venue_name'] ?></option>
 
