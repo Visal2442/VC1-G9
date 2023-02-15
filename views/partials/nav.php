@@ -43,7 +43,7 @@ if(isset($_COOKIE['username'])){
                 <button class='<?= !$display ? "" : "hidden"; ?> bg-[#185b8b] hover:bg-[#2177B5] hover:underline m-0 py-2 pr-4 pl-3 text-white rounded'>
                     <a href="/login">Log in</a>
                 </button>
-                <a href="#" class="dropdown-toggle flex items-center hidden-arrow <?= $display ? "" : "hidden"; ?>" id="dropdownMenuButton2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#" class="dropdown-toggle flex items-center hidden-arrow <?= $display ? "" : "hidden"; ?>" id="dropdownMenuButton2" data-bs-toggle="dropdown">
                     <img src="../../assets/profile/unnamed.png" class=" h-10 w-10 rounded-full ">
                 </a>
                 <ul class=" dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-40 m-0 bg-clip-padding border-none left-auto right-0 " aria-labelledby="dropdownMenuButton2">
