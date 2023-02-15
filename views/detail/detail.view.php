@@ -57,4 +57,5 @@ if (isset($_COOKIE['username'])) {
 
 <?php require("views/booking/booking.view.php"); ?>
 <script src="views/js/booking/booking.js"></script>
+<?php require("views/purchase/purchase.view.php");?>
 <?php require 'views/partials/footer.php'; ?>

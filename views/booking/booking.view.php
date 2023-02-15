@@ -72,7 +72,7 @@
                 <label for="total_price" class=" ">Total Price</label>
                 <input type="text" disabled id="total_price" name="total_price" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
             </div>
-            <div class="modal-footer ml-2 my-5 mr-5 flex border-gray-200 rounded-b-md">
+            <div class="modal-footer ml-2 my-5 mr-5 flex border-gray-200 rounded-b-md" data-bs-toggle="modal" data-bs-target="#purchaseModal">
                 <button type="submit"  id="booking_btn" class="p-2.5 bg-yellow-400 hover:bg-yellow-500 text-black text-lg leading-tight uppercase rounded shadow-md w-full">Confrim Booking</button>
             </div>
         </form>
