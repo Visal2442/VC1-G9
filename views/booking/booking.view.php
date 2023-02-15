@@ -2,13 +2,13 @@
 <div class="flex flex-col collapse mb-5" id="seat">
     <h1 class=" text-white text-center mb-10 font-bold text-3xl ">Book Ticket now</h1>
     <div class="flex">
-        <div class="ml-8">
+        <div class="ml-8 hidden" id="seat_container">
             <div class="flex bg-gray-300 ml-4  ">
                 <div class=" flex ml-20">
                     <p class=" bg-red-500 rounded-t-lg p-5 m-1"></p>
                     <p class=" mt-3">Available</p>
                 </div>
-                <div class=" flex ml-40">
+                <div class="flex ml-40">
                     <p class=" bg-green-500 rounded-t-lg p-5 m-1"></p>
                     <p class=" mt-3">Select</p>
                 </div>
@@ -18,11 +18,8 @@
                 </div>
             </div>
     
-            <div class="grid grid-cols-12 gap-2 mt-5 ml-12 ">
-                <?php for ($i = 1; $i <= 120; $i++) :?>
-                    <input type="checkbox" name="seat" class="bg-red-500 rounded-t-lg p-5 m-1" value="<?= $i?>">
-                    <p class="text-red-500"><?= $i?></p>
-                <?php endfor; ?>
+            <div id="seat_view" class="grid grid-cols-12 gap-2 mt-5 ml-12 ">
+       
             </div>
         </div>
     
@@ -57,7 +54,7 @@
             <div class="movie-genre ml-2 mb-2 mr-5">
                 <label for="time" class=" "> Select Time </label>
                 <select id="time" name="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
-    
+
                 </select>
             </div>
             <div class="movie-releasedate ml-2 mb-2 mr-5">
@@ -66,11 +63,13 @@
             </div>
             <div class="ml-2 mb-2 mr-5">
                 <label for="seat_number" class=" "> Seat Number</label>
-                <input type="text" disabled id="seat_number" name="seat_number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                <input type="text" disabled id="no_seat" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                <input type="hidden" id="seat_number" name="seat_number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
             </div>
             <div class="ml-2 mb-2 mr-5">
                 <label for="total_price" class=" ">Total Price</label>
-                <input type="text" disabled id="total_price" name="total_price" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                <input type="text" disabled id="t_price" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
+                <input type="hidden" id="total_price" name="total_price" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 rounded aoutline-0">
             </div>
             <div class="modal-footer ml-2 my-5 mr-5 flex border-gray-200 rounded-b-md">
                 <button type="submit"  id="booking_btn" class="p-2.5 bg-yellow-400 hover:bg-yellow-500 text-black text-lg leading-tight uppercase rounded shadow-md w-full">Confrim Booking</button>

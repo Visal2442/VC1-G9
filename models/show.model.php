@@ -105,7 +105,7 @@ function getShowDate(int $movie_id): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 // Get venues 
-function getVenues(int $movie_id ,string $showing_date): array
+function getVenues(int $movie_id, string $showing_date): array
 {
     global $connection;
     $statement = $connection->prepare('SELECT DISTINCT venues.venue_id, venues.venue_name FROM shows 
@@ -119,7 +119,7 @@ function getVenues(int $movie_id ,string $showing_date): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 // Get Halls 
-function getHalls(int $movie_id, string $showing_date, int $venue_id): array 
+function getHalls(int $movie_id, string $showing_date, int $venue_id): array
 {
     global $connection;
     $statement = $connection->prepare('SELECT DISTINCT shows.hall FROM shows 
@@ -134,7 +134,7 @@ function getHalls(int $movie_id, string $showing_date, int $venue_id): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 // Get times 
-function getTimes(int $movie_id, string $showing_date, int $venue_id, string $hall):array
+function getTimes(int $movie_id, string $showing_date, int $venue_id, string $hall): array
 {
     global $connection;
     $statement = $connection->prepare('SELECT DISTINCT time FROM shows 
@@ -145,10 +145,60 @@ function getTimes(int $movie_id, string $showing_date, int $venue_id, string $ha
         ":movie_id" => $movie_id,
         ":showing_date" => $showing_date,
         ":venue_id" => $venue_id,
-        ":hall"=>$hall
+        ":hall" => $hall
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+// Get amount of tickets 
+function getAmountOfTicket($showing_date, $hall, $time): array
+{
+    global $connection;
+    $statement = $connection->prepare('select shows.amount_ticket from shows
+                                        inner join movies on movies.movie_id=shows.movie_id
+                                        inner join venues on venues.venue_id = shows.venue_id
+                                        where shows.date = :date and shows.hall = :hall and shows.time = :time ');
+    $statement->execute([
+        ":date" => $showing_date,
+        ":hall" => $hall,
+        ":time" => $time
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Get a show 
+function getShowId($movie_id, $showing_date, $venue_id, $hall, $time): array
+{
+    global $connection;
+    $statement = $connection->prepare('select shows.show_id from shows
+                                    inner join movies on movies.movie_id = shows.movie_id
+                                    inner join venues on venues.venue_id = shows.venue_id
+                                    where movies.movie_id = :movie_id and venues.venue_id = :venue_id and shows.date = :date and shows.time= :time and shows.hall = :hall');
+    $statement->execute([
+        ":movie_id" => $movie_id,
+        ":venue_id" => $venue_id,
+        ":date" => $showing_date,
+        ":time" => $time,
+        ":hall" => $hall
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+// Get seat 
+function getSeatBooked($show_id): array
+{
+    global $connection;
+    $statement = $connection->prepare('select booking.seat_number from booking 
+                                        inner join shows on shows.show_id = booking.show_id
+                                        where shows.show_id = :show_id');
+    $statement->execute([
+        ":show_id" => $show_id
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
 
 // Search for show 
 function searchShow(string $input): array
