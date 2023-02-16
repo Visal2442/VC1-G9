@@ -6,7 +6,6 @@ if(isset($id)){
     $shows= getShowByMovieId($_GET["id"]);
     $dates = getShowDate($id);
 }
-
 require 'views/detail/detail.view.php';
 $_SESSION['movie_name']=$shows[0]['movie_name'];
 
