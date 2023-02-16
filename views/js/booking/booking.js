@@ -71,22 +71,21 @@ $(document).ready(function () {
     });
   });
 
-  // Booking ticket
-  $("#booking_form").on("submit", function (e) {
-    e.preventDefault();
-    let datas = new FormData(this);
-    $.ajax({
-      url: "controllers/payment/payment.controller.php",
-      method: "post",
-      data: datas,
-      contentType: false,
-      processData: false,
-      success: function (data) {
-        // alert(data);
-        console.log(data);
-      },
+    // Booking ticket 
+    $('#booking_form').on('submit',function(e){
+        e.preventDefault();
+        let datas = new FormData(this);
+          $.ajax({
+            url: "controllers/payment/payment.controller.php",
+            method: "post",
+            data: datas,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                // alert(data);
+            }
+        });
     });
-  });
 });
 
 // ====== Select seat =======

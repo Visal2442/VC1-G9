@@ -7,7 +7,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // echo "Success";
         print_r($seat_arr);
     }
-    else{
-        echo "Error";
-    }
+    
 }
