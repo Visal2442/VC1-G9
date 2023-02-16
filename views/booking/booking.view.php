@@ -68,6 +68,7 @@
             <p id="hall_n" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
             <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">Number of seats</label>
+            <input type="hidden" id="total_seats" name="total_seats">
             <p id="number_of_seat" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
             
             <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">Seats detail</label>
