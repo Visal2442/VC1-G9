@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <form action="" method="post" id="booking_form" class="p-4 uppercase">
+        <form action="" method="post" id="form_booking" class="p-4 uppercase" enctype="multipart/form-data">
             <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
             <input type="hidden" value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name">
             
@@ -68,6 +68,7 @@
             <p id="hall_n" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
             <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Number of seats</label>
+            <input type="hidden" id="total_seats" name="total_seats">
             <p id="number_of_seat" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
             
             <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Seats detail</label>
@@ -81,7 +82,7 @@
             <label for="default-input" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white">Booking date</label>
             <input type="date" id="booking_date" name="booking_date" class="text-sm text-white rounded-sm p-2 w-full outline-0 border-b border-b-gray-500 bg-[#09324F]">
 
-            <button type="button" class="w-full uppercase bg-yellow-500 hover:bg-yellow-600 hover:text-white font-bold p-1.5 rounded-sm mt-4" data-bs-toggle="modal" data-bs-target="#purchaseModal">confirm booking</button>
+            <button type="submit" class="w-full uppercase bg-yellow-500 hover:bg-yellow-600 hover:text-white font-bold p-1.5 rounded-sm mt-4" data-bs-toggle="modal">confirm booking</button>
         </form>
     </div>
 </div>

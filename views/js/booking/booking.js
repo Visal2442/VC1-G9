@@ -27,6 +27,7 @@ $(document).ready(function () {
   // ==== Select venue =====
   $("#venue").on("change", function () {
     let venue_id = $(this).val();
+    let venue_name= $(this).find("option:selected").text();
     $("#venue_name").text($(this).find("option:selected").text());
     $("#venue_id").val($(this).val());
     $.ajax({
@@ -35,6 +36,7 @@ $(document).ready(function () {
       data: {
         movie_id: movie_id,
         venue_id: venue_id,
+        venue_name: venue_name,
       },
       success: function (data) {
         $("#hall").html(data);
@@ -78,6 +80,23 @@ $(document).ready(function () {
       },
     });
   });
+  //confirm booking
+  $("#form_booking").on("submit", function (e) {
+    e.preventDefault();
+    let form_data = new FormData(this);
+    $.ajax({
+      url: "controllers/booking/booking.controller.php",
+      method: "post",
+      data: form_data,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+          $("#summary_booking").html(data);
+          $("#purchaseModal").modal("show");
+      }
+
+    });
+  });
 
   // Booking ticket
   $("#payment_form").on("submit", function (e) {
@@ -98,13 +117,14 @@ $(document).ready(function () {
 
 // ====== Select seat =======
 let seat_arr = [];
-let total_price = 0;
+let t_price = 0;
 let price = document.getElementById("price").value;
 function selectSeat(seat) {
   let total_price = document.getElementById("total_price");
   let total_ticket_price = document.getElementById("total_ticket_price");
   let no_seat = document.getElementById("no_seat");
   let seat_number = document.getElementById("seat_number");
+  let total_seats = document.getElementById("total_seats");
   let number_of_seat = document.getElementById("number_of_seat");
   if (seat.checked) {
     if (seat_arr.indexOf(seat.value) === -1) {
@@ -122,10 +142,12 @@ function selectSeat(seat) {
   }
   // Add Values into input
               // ==== Seat number ===
+  total_seats.value = seat_arr.length;
   number_of_seat.textContent = seat_arr.length;
   no_seat.textContent = seat_arr; // Only display
   seat_number.value = seat_arr;
               // ==== Ticket price ===
-  total_price = price * seat_arr.length;
-  total_ticket_price.textContent = total_price + "$"; // Only display
+  t_price = price * seat_arr.length;
+  total_price.value = t_price;
+  total_ticket_price.textContent = t_price + "$"; // Only display
 }

@@ -10,6 +10,7 @@ $routes = [
     '/search' => 'controllers/search/search.controller.php',
     '/profile' => 'controllers/profile/profile.controller.php',
     '/seller' => 'controllers/seller/seller.controller.php',
+    '/booking' => 'controllers/booking/booking.account.controller.php',
 
 ];
 

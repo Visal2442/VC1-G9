@@ -2,18 +2,8 @@
     <div class="modal-dialog modal-lg modal-dialog-centered relative w-auto pointer-events-none">
         <div class="modal-body  modal-content border-none shadow-lg relative  w-full pointer-events-auto bg-clip-padding rounded-md outline-none text-current">
             <div class="purchase-container flex w-full rounded-l-lg" id="purchaseModalLgLabel">
-                <div class="sum-ticket bg-[#f6f6f6] w-full text-white rounded-l-lg">
-                    <h1 class=" uppercase border-b-2 border-black mr-3 ml-3  text-black  pt-6 pb-2 text-2xl text-center">
-                        summary booking</h1>
-                    <div class="text-black p-5">
-                        <p class="p-1">Customer name: <span class="font-bold">Pichey</span></p>
-                        <p class="p-1">Movie Title: <span class="font-bold">Masha and The bear</span></p>
-                        <p class="p-1">Show date: <span class="font-bold">29-02-2023</span></p>
-                        <p class="p-1">Number of ticket: <span class="font-bold">3</span></p>
-                        <p class="p-1">Seat detail: <span class="font-bold">A1,A2,A3</span></p>
-                        <p class="p-1">Total price: <span class="font-bold">120</span>$</p>
-                    </div>
-                    <img src="../../assets/imgs/footer.png" alt="" class="rounded-bl-lg   shadow-current w-96 h-36" style="box-shadow: 0 -2px 2px -4px rgb(142, 142, 142);">
+                <div id="summary_booking" class="sum-ticket bg-[#f6f6f6] w-full text-white rounded-l-lg">
+                   
                 </div>
                 <div class="credit-pay bg-[#06263C] p-4 w-full rounded-r-lg ">
                     <h1 class=" uppercase border-b-2 p-2 text-2xl text-white text-center">credit card</h1>
