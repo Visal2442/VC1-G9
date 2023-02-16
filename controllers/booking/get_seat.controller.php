@@ -15,7 +15,7 @@ if (isset($_POST['time'])) {
     $amount_ticket = getAmountOfTicket($showing_date, $hall, $_POST['time']);
     for ($i = 1; $i <= $amount_ticket['amount_ticket']; $i++) :
 ?>
-        <label for="seat<?= $i ?>"><img src=<?= in_array($i, $seat_arr)==1?'../../assets/logo/cinema-logo.png':'../../assets/logo/chair.png' ?> width="65" height="65" class="rounded-full"></label>
+        <label for="seat<?= $i ?>"><img src=<?= in_array($i, $seat_arr)==1?'../../assets/profile/Default_pf.png':'../../assets/logo/chair.png' ?> width="65" height="65" class="rounded-full"></label>
         <input type="checkbox" id="seat<?= $i ?>" name="seat<?= $i ?>" onclick="selectSeat(this)" <?= in_array($i, $seat_arr)==1?"disabled":"" ?> class="select-seat hidden bg-red-500 rounded-t-lg p-5 m-1" value="<?= $i ?>">
 <?php
     endfor;

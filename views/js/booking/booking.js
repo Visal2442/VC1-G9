@@ -100,7 +100,7 @@ function selectSeat(seat) {
   if (seat.checked) {
     if (seat_arr.indexOf(seat.value) === -1) {
       seat_arr.push(seat.value);
-      seat.previousElementSibling.firstChild.src = "../../../assets/profile/Default_pf.png";
+      seat.previousElementSibling.firstChild.src = "../../../assets/imgs/selected.png";
     }
   } else {
     let seat_index = seat_arr.indexOf(seat.value);
