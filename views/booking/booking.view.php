@@ -52,19 +52,17 @@
             <label for="default-input" class="block mb-2  text-sm font-medium text-gray-900 dark:text-white">Customer name</label>
             <p id="default-input" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Number of seats</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium  dark:text-white">Number of seats</label>
             <p id="default-input" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Seats detail</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium  dark:text-white">Seats detail</label>
             <p id="default-input" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Total ticket price</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium  dark:text-white">Total ticket price</label>
             <p id="default-input" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Booking date</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium  dark:text-white">Booking date</label>
             <input type="date"  id=""class="text-sm text-white rounded-sm p-2 w-full outline-0 border-b border-b-gray-500 bg-[#09324F]">
-
-
             <button class="w-full uppercase bg-yellow-500 hover:bg-yellow-600 hover:text-white font-bold p-1.5 rounded-sm mt-4">
                 confirm booking
             </button>
