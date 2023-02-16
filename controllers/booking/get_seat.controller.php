@@ -8,6 +8,7 @@ $hall = $_SESSION['hall'];
 if (isset($_POST['time'])) {
     require '../../models/show.model.php';
     $show_booked = getShowId($_POST['movie_id'], $showing_date, $venue_id, $hall, $_POST['time']);
+    $_SESSION['show_id'] = $show_booked['show_id'];
     $seat_booked = getSeatBooked($show_booked['show_id']);
     $seat_arr = [];
     foreach ($seat_booked as $seat) {
