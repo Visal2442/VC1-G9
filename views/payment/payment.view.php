@@ -5,7 +5,7 @@
                 <div class="sum-ticket bg-[#f6f6f6] w-full text-white rounded-l-lg">
                     <h1 class=" uppercase border-b-2 border-black mr-3 ml-3  text-black  pt-6 pb-2 text-2xl text-center">
                         summary booking</h1>
-                    <div class="text-black  p-5">
+                    <div class="text-black p-5">
                         <p class="p-1">Customer name: <span class="font-bold">Pichey</span></p>
                         <p class="p-1">Movie Title: <span class="font-bold">Masha and The bear</span></p>
                         <p class="p-1">Show date: <span class="font-bold">29-02-2023</span></p>
@@ -41,4 +41,4 @@
         </div>
     </div>
 </div>
-<script src="views/js/booking/booking.js"></script>
+<!-- <script src="views/js/booking/booking.js"></script> -->

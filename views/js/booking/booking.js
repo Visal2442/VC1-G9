@@ -10,6 +10,8 @@ $(document).ready(function () {
   let movie_id = $("#movie_id").val();
   $("#showing_date").on("change", function () {
     let showing_date = this.value;
+    $("#show_d").text($(this).find("option:selected").text());
+    $("#show_date").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_venue.controller.php",
       method: "POST",
@@ -25,7 +27,7 @@ $(document).ready(function () {
   // ==== Select venue =====
   $("#venue").on("change", function () {
     let venue_id = $(this).val();
-    $("#venue_name").val($(this).find("option:selected").text());
+    $("#venue_name").text($(this).find("option:selected").text());
     $("#venue_id").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_hall.controller.php",
@@ -42,7 +44,7 @@ $(document).ready(function () {
   // ==== Select hall ====
   $("#hall").on("change", function () {
     let hall = this.value;
-    $("#hall_n").val($(this).find("option:selected").text());
+    $("#hall_n").text($(this).find("option:selected").text());
     $("#hall_name").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_time.controller.php",
@@ -59,7 +61,7 @@ $(document).ready(function () {
   // ==== Select time =====
   $("#time").on("change", function () {
     let time = this.value;
-    $("#time_s").val($(this).find("option:selected").text());
+    $("#time_s").text($(this).find("option:selected").text());
     $("#time_show").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_seat.controller.php",
@@ -99,14 +101,16 @@ let seat_arr = [];
 let total_price = 0;
 let price = document.getElementById("price").value;
 function selectSeat(seat) {
-  let t_price = document.getElementById("t_price");
   let total_price = document.getElementById("total_price");
+  let total_ticket_price = document.getElementById("total_ticket_price");
   let no_seat = document.getElementById("no_seat");
   let seat_number = document.getElementById("seat_number");
+  let number_of_seat = document.getElementById("number_of_seat");
   if (seat.checked) {
     if (seat_arr.indexOf(seat.value) === -1) {
       seat_arr.push(seat.value);
-      seat.previousElementSibling.firstChild.src = "../../../assets/imgs/selected.png";
+      seat.previousElementSibling.firstChild.src =
+        "../../../assets/imgs/selected.png";
     }
   } else {
     let seat_index = seat_arr.indexOf(seat.value);
@@ -116,9 +120,12 @@ function selectSeat(seat) {
         "../../../assets/logo/chair.png";
     }
   }
-  // ==== Add value into input ===
-  total_price = price * seat_arr.length;
-  t_price.value = total_price + "$"; // Only display
-  no_seat.value = seat_arr; // Only display
+  // Add Values into input
+              // ==== Seat number ===
+  number_of_seat.textContent = seat_arr.length;
+  no_seat.textContent = seat_arr; // Only display
   seat_number.value = seat_arr;
+              // ==== Ticket price ===
+  total_price = price * seat_arr.length;
+  total_ticket_price.textContent = total_price + "$"; // Only display
 }
