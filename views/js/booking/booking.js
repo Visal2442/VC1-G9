@@ -24,7 +24,9 @@ $(document).ready(function () {
   });
   // ==== Select venue =====
   $("#venue").on("change", function () {
-    let venue_id = this.value;
+    let venue_id = $(this).val();
+    $("#venue_name").val($(this).find("option:selected").text());
+    $("#venue_id").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_hall.controller.php",
       method: "POST",
@@ -40,6 +42,8 @@ $(document).ready(function () {
   // ==== Select hall ====
   $("#hall").on("change", function () {
     let hall = this.value;
+    $("#hall_n").val($(this).find("option:selected").text());
+    $("#hall_name").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_time.controller.php",
       method: "POST",
@@ -55,6 +59,8 @@ $(document).ready(function () {
   // ==== Select time =====
   $("#time").on("change", function () {
     let time = this.value;
+    $("#time_s").val($(this).find("option:selected").text());
+    $("#time_show").val($(this).val());
     $.ajax({
       url: "controllers/booking/get_seat.controller.php",
       method: "POST",
@@ -65,27 +71,27 @@ $(document).ready(function () {
       success: function (data) {
         $("#seat_container").show();
         $("#seat_view").html(data);
-        $('#seat').collapse(true);
-        showTime()
+        $("#seat").collapse(true);
+        showTime();
       },
     });
   });
 
-    // Booking ticket 
-    $('#booking_form').on('submit',function(e){
-        e.preventDefault();
-        let datas = new FormData(this);
-          $.ajax({
-            url: "controllers/payment/payment.controller.php",
-            method: "post",
-            data: datas,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                // alert(data);
-            }
-        });
+  // Booking ticket
+  $("#payment_form").on("submit", function (e) {
+    e.preventDefault();
+    let datas = new FormData(this);
+    $.ajax({
+      url: "controllers/payment/payment.controller.php",
+      method: "post",
+      data: datas,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        console.log(data);
+      },
     });
+  });
 });
 
 // ====== Select seat =======
@@ -100,18 +106,20 @@ function selectSeat(seat) {
   if (seat.checked) {
     if (seat_arr.indexOf(seat.value) === -1) {
       seat_arr.push(seat.value);
-      seat.previousElementSibling.firstChild.src = "../../../assets/profile/Default_pf.png";
+      seat.previousElementSibling.firstChild.src =
+        "../../../assets/profile/Default_pf.png";
     }
   } else {
     let seat_index = seat_arr.indexOf(seat.value);
     if (seat_index > -1) {
       seat_arr.splice(seat_index, 1);
-      seat.previousElementSibling.firstChild.src = "../../../assets/logo/chair.png";
+      seat.previousElementSibling.firstChild.src =
+        "../../../assets/logo/chair.png";
     }
   }
   // ==== Add value into input ===
   total_price = price * seat_arr.length;
-  t_price.value = total_price + "$";
-  no_seat.value = seat_arr;
+  t_price.value = total_price + "$"; // Only display
+  no_seat.value = seat_arr; // Only display
   seat_number.value = seat_arr;
 }

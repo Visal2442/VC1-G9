@@ -25,6 +25,39 @@ function addMovie(string $movie_name, string $genre, string $subtitle, string $d
     return $statement->rowCount() > 0;
 }
 
+// Update movie into database 
+function updateMovie(string $movie_id, string $movie_name, string $genre, string $subtitle, string $description, string $release_date, string $duration, string $image, string $trailer): bool
+{
+    global $connection;
+    if (empty($image)) {
+        $statement = $connection->prepare('update movies set movie_name = :movie_name, genre = :genre, subtitle = :subtitle, description = :description, release_date =:release_date, duration= :duration, trailer=:trailer where movie_id = :movie_id');
+        $statement->execute([
+            ":movie_id" => $movie_id,
+            ":movie_name" => $movie_name,
+            ":genre" => $genre,
+            ":subtitle" => $subtitle,
+            ":description" => $description,
+            ":release_date" => $release_date,
+            ":duration" => $duration,
+            ":trailer" => $trailer
+        ]);
+    } else {
+        $statement = $connection->prepare('update movies set movie_name = :movie_name, genre = :genre, subtitle = :subtitle, description = :description, release_date =:release_date, duration= :duration, image= :image, trailer=:trailer where movie_id = :movie_id');
+        $statement->execute([
+            ":movie_id" => $movie_id,
+            ":movie_name" => $movie_name,
+            ":genre" => $genre,
+            ":subtitle" => $subtitle,
+            ":description" => $description,
+            ":release_date" => $release_date,
+            ":duration" => $duration,
+            ":image" => $image,
+            ":trailer" => $trailer
+        ]);
+    }
+    return $statement->rowCount() > 0;
+}
+
 // Get movie by id 
 function getMovieById($movie_id): array
 {
