@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+$_SESSION["total_price"]=$_POST['total_price'];
+$_SESSION["seat_number"]=$_POST['seat_number'];
 
 if (isset($_POST["show_date"]) && isset($_POST["time_show"]) && isset($_POST["venue_id"]) && isset($_POST["hall_name"]) && !empty($_POST["total_seats"]) && isset($_POST["seat_number"]) && isset($_POST["total_price"]) && isset($_POST["booking_date"])) {
     if (!empty($_POST["show_date"]) && !empty($_POST["time_show"]) && !empty($_POST["venue_id"]) && !empty($_POST["hall_name"]) && !empty($_POST["total_seats"]) && !empty($_POST["seat_number"])  && !empty($_POST["total_price"]) && !empty($_POST["booking_date"])) {
