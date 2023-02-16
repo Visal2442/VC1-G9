@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+#customer-body{
+  background-image: linear-gradient(90deg,#041826,#082336,#143954,#093351,#092F4A,#072840,#05253A);
+}
 
 /* navbar  */
 nav{

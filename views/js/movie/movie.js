@@ -1,13 +1,12 @@
 $(document).ready(function () {
   displayMovie();
 
-  // Date picker 
+  // Date picker
   $("#release_date").datepicker({
     changeMonth: true,
     changeYear: true,
     dateFormat: "d M yy",
   });
-
 
   // Add Movie
   $("#create_movie_form").on("submit", function (e) {
@@ -37,22 +36,50 @@ $(document).ready(function () {
             alert("Input cannot be empty!");
           }
         }
-
-      });
-  });
-   // Display Movies
-   function displayMovie() {
-    $.ajax({
-      url: "controllers/seller/movie/movie.controller.php",
-      method: "GET",
-      success: function (data) {
-        $("#t-movie").html(data);
-      },
     });
-  }
-
+  });
 });
- 
 
+// Display Movies
+function displayMovie() {
+  $.ajax({
+    url: "controllers/seller/movie/movie.controller.php",
+    method: "GET",
+    success: function (data) {
+      $("#t-movie").html(data);
+    },
+  });
+}
 
+// Edit Movie
+function editMovie(movie_id) {
+  let edit_movie = $("#editMovie");
+  let modal_body = $("#modal-edit-movie-body");
+  $.ajax({
+    url: "controllers/seller/movie/movie.edit.controller.php",
+    method: "POST",
+    data: {
+      movie_id: movie_id,
+    },
+    success: function (data) {
+      modal_body.html(data);
+      edit_movie.modal("show");
+    },
+  });
+}
 
+// Delete Venue
+function deleteMovie(movie_id, movie_modal) {
+  $.ajax({
+    url: "controllers/seller/movie/movie.delete.controller.php",
+    method: "POST",
+    data: {
+      movie_id: movie_id,
+    },
+    success: function (data) {
+      console.log(data);
+      $(movie_modal).modal("hide");
+      displayMovie();
+    },
+  });
+}
