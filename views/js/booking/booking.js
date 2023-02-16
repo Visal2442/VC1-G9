@@ -129,15 +129,13 @@ function selectSeat(seat) {
   if (seat.checked) {
     if (seat_arr.indexOf(seat.value) === -1) {
       seat_arr.push(seat.value);
-      seat.previousElementSibling.firstChild.src =
-        "../../../assets/imgs/selected.png";
+      seat.previousElementSibling.firstChild.src = "../../../assets/imgs/select.png";
     }
   } else {
     let seat_index = seat_arr.indexOf(seat.value);
     if (seat_index > -1) {
       seat_arr.splice(seat_index, 1);
-      seat.previousElementSibling.firstChild.src =
-        "../../../assets/logo/chair.png";
+      seat.previousElementSibling.firstChild.src = "../../../assets/imgs/seat.png";
     }
   }
   // Add Values into input

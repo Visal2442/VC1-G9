@@ -210,3 +210,17 @@ function searchShow(string $input): array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
+
+function getBookingByCusId(int $customer_id): array 
+{
+    global $connection;
+    $statement = $connection->prepare('select * from booking 
+                                        inner join customers on customers.customer_id = booking.customer_id
+                                        where customers.customer_id = :customer_id');
+    $statement ->execute([
+        ":customer_id" => $customer_id
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

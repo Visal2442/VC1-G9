@@ -49,10 +49,10 @@ if (isset($_COOKIE['username'])) {
                 <p class="font-semibold hidden md:block text-lg text-gray-300">Description</p>
                 <p>: <?= $shows[0]['description'] ?></p>
             </div>
-            <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login?"hidden":"" ?>"><a href="<?= $url?>">Buy Ticket</a></button>
+            <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login ? "hidden" : "" ?>"><a href="<?= $url ?>">Buy Ticket</a></button>
         </div>
     </div>
-    <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-20 my-auto grid gap-3 <?= $is_login?"":'hidden'?>" enctype="multipart/form-data">
+    <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-20 my-auto grid gap-3 <?= $is_login ? "" : 'hidden' ?>" enctype="multipart/form-data">
         <h1 class="text-2xl text-white font-bold text-center mb-4">Buy Ticket</h1>
         <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
         <input type="hidden" value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name">
@@ -67,12 +67,12 @@ if (isset($_COOKIE['username'])) {
         <div class="ml-2 mb-2 mr-5">
             <select id="venue" name="venue" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm block w-full p-2.5 rounded outline-0">
                 <option disabled selected>Choose Venue/Cinema</option>
-                
+
             </select>
         </div>
         <div class="ml-2 mb-2 mr-5">
             <select id="hall" name="hall" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm block w-full p-2.5 rounded outline-0">
-                <option disabled selected >Choose a Hall</option>
+                <option disabled selected>Choose a Hall</option>
 
             </select>
         </div>
@@ -89,6 +89,6 @@ if (isset($_COOKIE['username'])) {
 </div>
 
 <?php require("views/booking/booking.view.php"); ?>
-<?php require("views/payment/payment.view.php");?>
 <script src="views/js/booking/booking.js"></script>
+<?php require("views/payment/payment.view.php"); ?>
 <?php require 'views/partials/footer.php'; ?>

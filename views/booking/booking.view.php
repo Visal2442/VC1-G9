@@ -5,15 +5,15 @@
             <div class="ml-8 hidden bg-slate-800 p-5" id="seat_container">
                 <div class="flex justify-around bg-gray-300 items-center  ">
                     <div class=" flex items-center ">
-                        <img src="../../assets/logo/chair.png" width="40" height="40">
+                        <img src="../../assets/imgs//seat.png" width="40" height="40">
                         <p class=" ml-3">Available</p>
                     </div>
                     <div class="flex items-center">
-                        <img src="../../assets/imgs/selected.png" id="selected">
+                        <img src="../../assets/imgs/select.png" id="selected">
                         <p class=" ml-3 ">Select</p>
                     </div>
                     <div class=" flex items-center">
-                        <img src="../../assets/logo/booked.png" width="50" height="30">
+                        <img src="../../assets/imgs//booked.png" width="50" height="30">
                         <p class=" ml-3">Sold</p>
                     </div>
                 </div>
@@ -51,35 +51,34 @@
             <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
             <input type="hidden" value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name">
             
-            <label for="default-input" class="block mb-2  text-sm font-medium text-gray-900 dark:text-white">Show Date</label>
+            <label for="default-input" class="block mb-2  text-sm font-medium text-white">Show Date</label>
             <input type="hidden" id="show_date" name="show_date">
             <p id="show_d" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">show time</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">show time</label>
             <input type="hidden" id="time_show" name="time_show">
             <p id="time_s" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">venue</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">venue</label>
             <input type="hidden" id="venue_id" name="venue_id">
             <p id="venue_name" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">hall</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">hall</label>
             <input type="hidden" id="hall_name" name="hall_name">
             <p id="hall_n" class="text-sm text-white  rounded-sm   pb-7 w-full   border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Number of seats</label>
-            <input type="hidden" id="total_seats" name="total_seats">
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">Number of seats</label>
             <p id="number_of_seat" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
             
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Seats detail</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">Seats detail</label>
             <input type="hidden" id="seat_number" name="seat_number">
             <p id="no_seat" class="text-sm text-white rounded-sm pb-7 w-full   border-b-gray-500"> </p>
             
-            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white">Total price</label>
+            <label for="default-input" class="block mb-2 mt-2  text-sm font-medium text-white">Total price</label>
             <input type="hidden" id="total_price" name="total_price">
             <p id="total_ticket_price" class="text-sm text-white rounded-sm pb-7 w-full border-b-gray-500"> </p>
 
-            <label for="default-input" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white">Booking date</label>
+            <label for="default-input" class="block mb-2 mt-2 text-sm font-medium text-white">Booking date</label>
             <input type="date" id="booking_date" name="booking_date" class="text-sm text-white rounded-sm p-2 w-full outline-0 border-b border-b-gray-500 bg-[#09324F]">
 
             <button type="submit" class="w-full uppercase bg-yellow-500 hover:bg-yellow-600 hover:text-white font-bold p-1.5 rounded-sm mt-4" data-bs-toggle="modal">confirm booking</button>
