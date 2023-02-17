@@ -1,5 +1,5 @@
 <?php
-function addBooking(string $customer_email, int $show_id, string $booking_date, int $seat_number) :bool
+function addBooking(string $customer_email, int $show_id, string $booking_date, string $seat_number) :bool
 {
     global $connection;
     $statement = $connection->prepare('insert into booking (email_address, show_id, booking_date, seat_number) values (:email_address, :show_id, :booking_date, :seat_number)');

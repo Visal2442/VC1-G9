@@ -4,9 +4,9 @@ function getAllShows(): array
 {
     global $connection;
     $statement = $connection->prepare(' select shows.*, venues.*, movies.* from movies
-                                        inner join shows oonmovies.movie_id = shows.movie_id 
+                                        inner join shows on movies.movie_id = shows.movie_id 
                                         inner join venues on venues.venue_id = shows.venue_id
-                                        ORDER BY shows.date');
+                                        order by shows.date');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
