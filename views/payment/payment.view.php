@@ -16,13 +16,13 @@
                     </div>
                     <form action="" method="post" class="pt-4" id="payment_form" enctype="multipart/form-data">
                         <label class="block text-sm font-medium text-white">Name on card</label>
-                        <input type="text" placeholder="Ex.jonh smit" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-sm text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
+                        <input type="text" id="card_name" name="card_name" placeholder="Ex.jonh smit" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-sm text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
                         <label class="block text-sm font-medium text-white">Card number</label>
-                        <input type="number" placeholder="Your credit card number" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-sm text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
+                        <input type="number" id="card_number" name="card_number" placeholder="Your credit card number" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-sm text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
                         <label class="block pt-1 text-sm font-medium text-white">Exp date</label>
                         <div class="cvc flex">
-                            <input type="date" class="mt-1 block rounded-l-sm  w-3/4 py-2 px-3 bg-white border border-slate-300 text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
-                            <input type="text" placeholder="CVC" class="mt-1 rounded-r-sm block w-1/4 px-3 py-2 text-center bg-white border border-slate-300 text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
+                            <input type="date" id="exp_date" name="exp_date" class="mt-1 block rounded-l-sm  w-3/4 py-2 px-3 bg-white border border-slate-300 text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
+                            <input type="text" id="cvc" name="cvc" placeholder="CVC" class="mt-1 rounded-r-sm block w-1/4 px-3 py-2 text-center bg-white border border-slate-300 text-sm shadow-sm placeholder-slate-400 focus:outline-none" />
                         </div>
                         <button type="submit" class="w-full cursor-pointer uppercase hover:underline hover:bg-yellow-600 text-center text-white bg-yellow-500 mt-6  px-3 py-1.5  text-md font-bold shadow-sm rounded-sm outline-none">Pay now</button>
                     </form>

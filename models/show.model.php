@@ -4,7 +4,7 @@ function getAllShows(): array
 {
     global $connection;
     $statement = $connection->prepare(' select shows.*, venues.*, movies.* from movies
-                                        inner join shows on movies.movie_id = shows.movie_id 
+                                        inner join shows oonmovies.movie_id = shows.movie_id 
                                         inner join venues on venues.venue_id = shows.venue_id
                                         ORDER BY shows.date');
     $statement->execute();
@@ -96,8 +96,8 @@ function deleteShow(int $show_id): bool
 function getShowDate(int $movie_id): array
 {
     global $connection;
-    $statement = $connection->prepare('SELECT DISTINCT shows.date FROM shows 
-                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
+    $statement = $connection->prepare('select distinct shows.date FROM shows 
+                                        inner join movies on movies.movie_id = shows.movie_id
                                         WHERE movies.movie_id = :movie_id');
     $statement->execute([
         ":movie_id" => $movie_id
@@ -108,10 +108,10 @@ function getShowDate(int $movie_id): array
 function getVenues(int $movie_id, string $showing_date): array
 {
     global $connection;
-    $statement = $connection->prepare('SELECT DISTINCT venues.venue_id, venues.venue_name FROM shows 
-                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
-                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
-                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date');
+    $statement = $connection->prepare('select distinct venues.venue_id, venues.venue_name FROM shows 
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        inner join venues on venues.venue_id = shows.venue_id
+                                        where movies.movie_id = :movie_id and shows.date = :showing_date');
     $statement->execute([
         ":movie_id" => $movie_id,
         ":showing_date" => $showing_date
@@ -122,10 +122,10 @@ function getVenues(int $movie_id, string $showing_date): array
 function getHalls(int $movie_id, string $showing_date, int $venue_id): array
 {
     global $connection;
-    $statement = $connection->prepare('SELECT DISTINCT shows.hall FROM shows 
-                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
-                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
-                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date AND venues.venue_id = :venue_id');
+    $statement = $connection->prepare('select distinct shows.hall FROM shows 
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        inner join venues on venues.venue_id = shows.venue_id
+                                        where movies.movie_id = :movie_id and shows.date = :showing_date and venues.venue_id = :venue_id');
     $statement->execute([
         ":movie_id" => $movie_id,
         ":showing_date" => $showing_date,
@@ -137,10 +137,10 @@ function getHalls(int $movie_id, string $showing_date, int $venue_id): array
 function getTimes(int $movie_id, string $showing_date, int $venue_id, string $hall): array
 {
     global $connection;
-    $statement = $connection->prepare('SELECT DISTINCT time FROM shows 
-                                        INNER JOIN movies ON movies.movie_id = shows.movie_id
-                                        INNER JOIN venues ON venues.venue_id = shows.venue_id
-                                        WHERE movies.movie_id = :movie_id AND shows.date = :showing_date AND venues.venue_id = :venue_id AND shows.hall = :hall');
+    $statement = $connection->prepare('select distinct time from shows 
+                                        inner join movies on movies.movie_id = shows.movie_id
+                                        inner join venues on venues.venue_id = shows.venue_id
+                                        where movies.movie_id = :movie_id and shows.date = :showing_date and venues.venue_id = :venue_id and shows.hall = :hall');
     $statement->execute([
         ":movie_id" => $movie_id,
         ":showing_date" => $showing_date,
@@ -167,10 +167,10 @@ function getAmountOfTicket($showing_date, $hall, $time): array
 }
 
 // Get a show 
-function getShowId($movie_id, $showing_date, $venue_id, $hall, $time): array
+function getShow($movie_id, $showing_date, $venue_id, $hall, $time): array
 {
     global $connection;
-    $statement = $connection->prepare('select shows.show_id from shows
+    $statement = $connection->prepare('select * from shows
                                     inner join movies on movies.movie_id = shows.movie_id
                                     inner join venues on venues.venue_id = shows.venue_id
                                     where movies.movie_id = :movie_id and venues.venue_id = :venue_id and shows.date = :date and shows.time= :time and shows.hall = :hall');
@@ -184,22 +184,6 @@ function getShowId($movie_id, $showing_date, $venue_id, $hall, $time): array
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
-// Get seat 
-function getSeatBooked($show_id): array
-{
-    global $connection;
-    $statement = $connection->prepare('select booking.seat_number from booking 
-                                        inner join shows on shows.show_id = booking.show_id
-                                        where shows.show_id = :show_id');
-    $statement->execute([
-        ":show_id" => $show_id
-    ]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-
-
 // Search for show 
 function searchShow(string $input): array
 {
@@ -211,16 +195,3 @@ function searchShow(string $input): array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
-function getBookingByCusId(int $customer_id): array 
-{
-    global $connection;
-    $statement = $connection->prepare('select * from booking 
-                                        inner join customers on customers.customer_id = booking.customer_id
-                                        where customers.customer_id = :customer_id');
-    $statement ->execute([
-        ":customer_id" => $customer_id
-    ]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}

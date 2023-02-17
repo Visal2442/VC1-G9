@@ -40,12 +40,6 @@ if (isset($_COOKIE['username'])) {
                 <p>: <?= $shows[0]['duration'] ?></p>
             </div>
             <div class="flex items-center">
-                <i class="material-icons block md:hidden">local_atm</i>
-                <p class="font-semibold hidden md:block text-lg text-gray-300">Ticket</p>
-                <p>: <?= $shows[0]["price_per_ticket"] ?> $</p>
-                <input type="hidden" id="price" value="<?= $shows[0]["price_per_ticket"] ?>">
-            </div>
-            <div class="flex items-center">
                 <p class="font-semibold hidden md:block text-lg text-gray-300">Description</p>
                 <p>: <?= $shows[0]['description'] ?></p>
             </div>
