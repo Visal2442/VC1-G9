@@ -15,11 +15,24 @@ if (isset($_POST['time'])) {
         array_push($seat_arr, $seat['seat_number']);
     }
     $amount_ticket = getAmountOfTicket($showing_date, $hall, $_POST['time']);
-    for ($i = 1; $i <= $amount_ticket['amount_ticket']; $i++) :
+    $seat_row = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q'];
+    $seat_number = 0;
+    $row_number = 1;
+    $column_number = 0;
+    for ($i = 0; $i < $amount_ticket['amount_ticket']; $i++) :
+        if ($i < $row_number * 12) {
+            $seat_number++;
+            $seat_name = $seat_row[$column_number] . $seat_number;
+        } else {
+            $row_number++;
+            $seat_number = 1;
+            $column_number++;
+            $seat_name = $seat_row[$column_number] . $seat_number;
+        }
 ?>
-        <input type="hidden" id="price_per_ticket" value="<?=$show_booked['price_per_ticket'] ?>">
-        <label for="seat<?= $i ?>"><img src=<?= in_array($i, $seat_arr) == 1 ? '../../assets/imgs/booked.png' : '../../assets/imgs/seat.png' ?> width="65" height="65" class="rounded-full"></label>
-        <input type="checkbox" id="seat<?= $i ?>" name="seat<?= $i ?>" onclick="selectSeat(this)" <?= in_array($i, $seat_arr) == 1 ? "disabled" : "" ?> class="select-seat hidden bg-red-500 rounded-t-lg p-5 m-1" value="<?= $i ?>">
+        <input type="hidden" id="price_per_ticket" value="<?= $show_booked['price_per_ticket'] ?>">
+        <label for="seat<?= $seat_name ?>"><img src=<?= in_array($seat_name, $seat_arr) == 1 ? '../../assets/imgs/booked.png' : '../../assets/imgs/seat.png' ?> width="65" height="65" class="rounded-full"></label>
+        <input type="checkbox" id="seat<?= $seat_name ?>" name="seat<?= $seat_name ?>" onclick="selectSeat(this)" <?= in_array($seat_name, $seat_arr) == 1 ? "disabled" : "" ?> class="select-seat hidden bg-red-500 rounded-t-lg p-5 m-1" value="<?= $seat_name ?>">
 <?php
     endfor;
 };
