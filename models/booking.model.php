@@ -26,14 +26,14 @@ function getSeatBooked($show_id): array
 }
 
 // ===== Get booking by customer id =====
-function getBookingByCusId(int $customer_id): array 
+function getBookingByCusEmail(string $email): array 
 {
     global $connection;
     $statement = $connection->prepare('select * from booking 
-                                        inner join customeon on customers.customer_id = booking.customer_id
-                                        where customers.customer_id = :customer_id');
+                                        inner join users on users.email_address = booking.email_address
+                                        where users.email_address = :email_address');
     $statement ->execute([
-        ":customer_id" => $customer_id
+        ":email_address" => $email
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
