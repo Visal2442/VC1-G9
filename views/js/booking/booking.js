@@ -135,7 +135,7 @@ $(document).ready(function () {
           alert("Card is invalid");
         }
         else{
-          alert(data);
+          alert('Payment is success');
           location.reload();
         }
       },
@@ -143,6 +143,8 @@ $(document).ready(function () {
   });
   
 });
+
+
 
 // ===== Display price ===== 
 function showPrice()

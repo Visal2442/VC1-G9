@@ -11,7 +11,7 @@ if (isset($_COOKIE['username'])) {
 ?>
 <div class="flex justify-between">
     <div class='block md:flex px-20 text-white gap-7'>
-        <img src="../../assets/movie_image/<?= $shows[0]["image"] ?>" class="w-fit h-80 mt-20">
+        <img src="../../assets/movie_image/<?= $shows[0]["image"] ?>" class="w-fit h-96 mt-20">
         <div class="mt-10 md:mt-20 flex flex-col gap-3">
             <h1 class="font-bold text-5xl mb-7"><?= $shows[0]['movie_name'] ?></h1>
             <div class="flex items-center">
@@ -43,7 +43,23 @@ if (isset($_COOKIE['username'])) {
                 <p class="font-semibold hidden md:block text-lg text-gray-300">Description</p>
                 <p>: <?= $shows[0]['description'] ?></p>
             </div>
-            <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login ? "hidden" : "" ?>"><a href="<?= $url ?>">Buy Ticket</a></button>
+            <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="login">
+                <div class="modal-dialog relative w-auto pointer-events-none">
+                    <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding  rounded outline-none text-current">
+                        <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                            <h5 class="text-xl font-medium leading-normal text-red-500">WARNING !</h5>
+                        </div>
+                        <div class="modal-body p-4">
+                            <p class="text-black">You don't have an account yet!</p>
+                        </div>
+                        <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                            <button type="button" class="px-6  py-2.5 bg-gray-50 text-black font-medium text-xs leading-tight uppercase rounded transition duration-150 ease-in-out" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded transition duration-150 ease-in-out ml-1"><a href="<?= $url ?>"> log in</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login ? "hidden" : "" ?>" data-bs-toggle="modal" data-bs-target="#login">Buy Ticket</a></button>
         </div>
     </div>
     <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-32 mt-20 grid gap-3 <?= $is_login ? "" : 'hidden' ?>" enctype="multipart/form-data">

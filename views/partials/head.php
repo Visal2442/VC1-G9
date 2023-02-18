@@ -22,6 +22,9 @@
     <!-- To print ticket as image  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <!-- Sweet Alert  -->
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script for search show  -->
     <script src="views/js/search/search.js"></script>
 </head>

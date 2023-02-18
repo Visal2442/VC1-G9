@@ -31,7 +31,7 @@ if (isset($_POST['time'])) {
         }
 ?>
         <input type="hidden" id="price_per_ticket" value="<?= $show_booked['price_per_ticket'] ?>">
-        <label for="seat<?= $seat_name ?>"><img src=<?= in_array($seat_name, $seat_arr) == 1 ? '../../assets/imgs/booked.png' : '../../assets/imgs/seat.png' ?> width="65" height="65" class="rounded-full"></label>
+        <label for="seat<?= $seat_name ?>"><img src=<?= in_array($seat_name, $seat_arr) == 1 ? '../../assets/imgs/booked.png' : '../../assets/imgs/seat.png' ?> width="60" height="60" class="rounded-full"></label>
         <input type="checkbox" id="seat<?= $seat_name ?>" name="seat<?= $seat_name ?>" onclick="selectSeat(this)" <?= in_array($seat_name, $seat_arr) == 1 ? "disabled" : "" ?> class="select-seat hidden bg-red-500 rounded-t-lg p-5 m-1" value="<?= $seat_name ?>">
 <?php
     endfor;

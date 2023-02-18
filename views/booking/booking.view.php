@@ -14,7 +14,7 @@
                     </div>
                     <div class=" flex items-center">
                         <img src="../../assets/imgs//booked.png" width="50" height="30">
-                        <p class=" ml-3">Sold</p>
+                        <p class=" ml-3">Unavailable</p>
                     </div>
                 </div>
 
