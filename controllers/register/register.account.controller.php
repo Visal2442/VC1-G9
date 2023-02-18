@@ -3,7 +3,7 @@ require 'database/database.php';
 $username_error = $email_error = $password_error = $confirm_error = $date_error = $address_error = $isTaken_error = "";
 $form_valid = true;
 if (isset($_POST['submit'])) {
-    $time = time() + (7 * 24 * 3600);
+    $time = time() + (30 * 24 * 3600);
     $isUser = getUserEmail($_POST['email']);
     if (!empty($isUser)) {
         $isTaken_error = "Email is already exist";
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['email'])) {
         $email = validateInput($_POST['email']);
         setcookie("email", $email, $time);
-        if (!str_contains($email, '@') && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!str_contains($email, '@') && !(filter_var($email, FILTER_VALIDATE_EMAIL))) {
             $email_error = "Email is invalid";
             $form_valid = false;
         } elseif (empty($email)) {
