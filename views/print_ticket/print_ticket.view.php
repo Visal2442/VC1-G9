@@ -1,17 +1,16 @@
-<?php  require("views/partials/head.php");?>
-    <style>
-        @media print {
-            #PrintButton {
-                display: none;
-            }
+<?php require("views/partials/head.php"); ?>
+<style>
+    @media print {
+        #PrintButton {
+            display: none;
         }
-    </style>
+    }
+</style>
 
-
-<body class="flex items-center h-screen w-full justify-center">
-    <div class=" h-64  w-[44rem] mb-10" style="background:#0A2E47">
-        <div class="flex  justify-between items-center">
-            <img src="../../assets/logo/cinema-logo.png" alt="" class="w-20 ml-10">uu
+<div class="flex bg-white items-center h-screen w-full justify-center">
+    <div class=" h-64 w-[44rem] mb-10" style="background:#0A2E47">
+        <div class="flex justify-between items-center">
+            <img src="assets/logo/cinema-logo.png" alt="" class="w-20 ml-10">
             <h1 class="-m-l-5 text-3xl text-yellow-500 font-bold" style="font-family:Algerian;">MOVIE TICKET</h1>
             <div class="w-24"></div>
         </div>
@@ -24,8 +23,8 @@
                 <p class="text-white px-1 text-l">Booking date : <span> </span></p>
                 <p class="text-white px-1 text-l">Price of ticket : <span> </span></p>
             </div>
-            <div class="align-middle ml-16  border-l mr-16">
-                <img src="images/avengers.jpg" alt="" class="shadow-[0px_22px_70px_4px_rgba(0,0,0,0.56)] w-56 ml-12 mt-2">
+            <div class="align-middle ml-16 border-l">
+                <img src="../../assets/movie_image/IMG-63ebc1ab34c827.59693393.jpg" class="shadow-[0px_22px_70px_4px_rgba(0,0,0,0.56)] w-full h-36 ml-12 mt-2">
             </div>
         </div>
         <div class="flex justify-around items-center">
@@ -39,18 +38,19 @@
             </button>
         </center>
     </div>
+    <script type="text/javascript">
+        function PrintPage() {
+            window.print()
+        }
+        document.loaded = function() {};
+        window.addEventListener('DOMContentLoaded', (event) => {
+            PrintPage()
+            setTimeout(function() {
+                window.close()
+            }, 24 * 3600)
+        });
+    </script>
+</div>
 </body>
-<script type="text/javascript">
-    function PrintPage() {
-        window.print()
-    }
-    document.loaded = function() {};
-    window.addEventListener('DOMContentLoaded', (event) => {
-        PrintPage()
-        setTimeout(function() {
-            window.close()
-        }, 24 * 3600)
-    });
-</script>
 
 </html>

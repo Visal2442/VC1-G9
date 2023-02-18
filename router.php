@@ -11,6 +11,7 @@ $routes = [
     '/profile' => 'controllers/profile/profile.controller.php',
     '/seller' => 'controllers/seller/seller.controller.php',
     '/cart'=> 'controllers/cart/cart.controller.php',
+    '/print'=> 'controllers/print_ticket/print_ticket.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
