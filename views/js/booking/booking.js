@@ -107,7 +107,7 @@ $(document).ready(function () {
       processData: false,
       success: function (data) {
         if (data == "error") {
-          alert("You must select the seats");
+          alert("Input cannot be empty");
         } else {
           $("#summary_booking").html(data);
           $("#purchaseModal").modal("show");
@@ -129,10 +129,13 @@ $(document).ready(function () {
       processData: false,
       success: function (data) {
         if (data == "error") {
-          alert("Input is required");
+          alert("Input cannot be empty");
+        }
+        else if(data == "error card"){
+          alert("Card is invalid");
         }
         else{
-          alert("Payment is successfully");
+          alert(data);
           location.reload();
         }
       },
