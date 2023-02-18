@@ -4,8 +4,9 @@ require 'models/show.model.php';
 require 'models/booking.model.php';
 require 'models/login.model.php';
 
+
 $customer=getCusByEmail($_COOKIE['email']);
-$booking = getBookingByCusEmail($_COOKIE['email']);
+$bookings = getBookingByCusEmail($_COOKIE['email']);
 
 
 
