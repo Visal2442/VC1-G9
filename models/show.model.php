@@ -6,7 +6,7 @@ function getAllShows(): array
     $statement = $connection->prepare(' select shows.*, venues.*, movies.* from movies
                                         inner join shows on movies.movie_id = shows.movie_id 
                                         inner join venues on venues.venue_id = shows.venue_id
-                                        order by shows.date');
+                                        order by shows.show_id desc');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -16,7 +16,9 @@ function getShowsForCard(): array
 {
     global $connection;
     $statement = $connection->prepare(' select distinct movies.movie_id, image, movie_name, genre, duration, release_date from shows
-                                        inner join movies on movies.movie_id = shows.movie_id order by movies.release_date desc');
+                                        inner join movies on movies.movie_id = shows.movie_id  
+                                        where str_to_date(shows.date, "%d %M %Y") >= current_date()
+                                        order by movies.release_date desc');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -65,7 +67,7 @@ function getShowById($show_id): array
 }
 
 // Update show 
-function updateShow(string $show_id, string $movie_id, string $venue_id, string $date, string $time, string $ticket_price, string $hall): bool
+function updateShow(string $show_id, string $movie_id, string $venue_id, string $date, string $time, string $ticket_price, string $hall, int $amount_of_ticket): bool
 {
     global $connection;
     $statement = $connection->prepare('update shows set movie_id = :movie_id, venue_id = :venue_id, date = :date, time = :time, amount_ticket = :amount_ticket, price_per_ticket = :ticket_price, hall = :hall where show_id = :show_id');
@@ -75,7 +77,7 @@ function updateShow(string $show_id, string $movie_id, string $venue_id, string 
         ":venue_id" => $venue_id,
         ":date" => $date,
         ":time" => $time,
-        ":amount_ticket" => 0,
+        ":amount_ticket" => $amount_of_ticket,
         ":ticket_price" => $ticket_price,
         ":hall" => $hall
     ]);

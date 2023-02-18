@@ -11,7 +11,7 @@ $(document).ready(function () {
   $("#showing_date").on("change", function () 
   {
     reset();
-    $("#form_booking")[0].reset();
+    // $("#form_booking")[0].reset();
     let showing_date = this.value;
     $("#show_d").text($(this).find("option:selected").text()); //For display
     $("#show_date").val($(this).val());
@@ -156,7 +156,7 @@ let seat_arr = [];
 let t_price = 0;
 function selectSeat(seat) 
 {
-  let price_per_ticket = document.getElementById("price_per_ticket").value;
+  let price_ticket = document.getElementById("price_per_ticket").value;
   let total_price = document.getElementById("total_price");
   let display_ticket_price = document.getElementById("display_ticket_price");
   let display_seat_number = document.getElementById("display_seat_number");
@@ -182,7 +182,7 @@ function selectSeat(seat)
   display_seat_number.value = seat_arr; // Only display
   seat_number.value = seat_arr;
   // ==== Ticket price ===
-  t_price = price_per_ticket * seat_arr.length;
+  t_price = price_ticket * seat_arr.length;
   total_price.value = t_price;
   display_ticket_price.value = t_price + "$"; // Only display
 }

@@ -53,9 +53,17 @@ if (isset($_COOKIE['username'])) {
         <div class="ml-2 mb-2 mr-5">
             <select id="showing_date" name="showing_date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm block w-full p-2.5 rounded outline-0">
                 <option disabled selected>Choose a date</option>
-                <?php foreach ($dates as $date) : ?>
-                    <option value="<?= $date['date'] ?>"><?= $date['date'] ?></option>
-                <?php endforeach; ?>
+                <?php
+                $today = date("Y-m-d");
+                $current_date = strtotime($today);
+                foreach ($dates as $date) :
+                    $show_date = strtotime($date['date']);
+                    if ($current_date <= $show_date) {
+                ?>
+                        <option value="<?= $date['date'] ?>"><?= $date['date'] ?></option>
+                <?php
+                    }
+                endforeach; ?>
             </select>
         </div>
         <div class="ml-2 mb-2 mr-5">

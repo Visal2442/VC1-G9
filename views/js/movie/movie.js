@@ -106,9 +106,14 @@ function deleteMovie(movie_id, movie_modal) {
       movie_id: movie_id,
     },
     success: function (data) {
-      console.log(data);
-      $(movie_modal).modal("hide");
-      displayMovie();
+      if(data == 'success') {
+        $(movie_modal).modal("hide");
+        displayMovie();
+      }
+      else{
+        alert(data);
+        $(movie_modal).modal("hide");
+      }
     },
   });
 }
