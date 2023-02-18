@@ -1,4 +1,5 @@
 <?php
+//add booking
 function addBooking(string $customer_email, int $show_id, string $booking_date, string $seat_number) :bool
 {
     global $connection;
@@ -11,7 +12,6 @@ function addBooking(string $customer_email, int $show_id, string $booking_date, 
     ]);
     return $statement->rowCount() > 0;
 }
-
 // Get seat 
 function getSeatBooked($show_id): array
 {
