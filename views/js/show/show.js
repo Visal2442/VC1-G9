@@ -73,6 +73,7 @@ function updateShow(show_id)
   let date = $("#edit_date").val();
   let time = $("#edit_time").val();
   let price = $("#edit_price").val();
+  let amount_of_ticket = $("#amount_of_ticket_edit").val();
 
   $.ajax({
     url: "controllers/seller/show/show.update.controller.php",
@@ -84,7 +85,8 @@ function updateShow(show_id)
       hall: hall,
       date: date,
       time: time,
-      price: price
+      price: price,
+      amount_of_ticket:amount_of_ticket
     },
     success: function (data) {
       if (data == "success") {
