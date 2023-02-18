@@ -10,8 +10,8 @@ if (isset($_COOKIE['username'])) {
 }
 ?>
 <div class="flex justify-between">
-    <div class='block md:flex px-12 text-white gap-10'>
-        <img src="../../assets/movie_image/<?= $shows[0]["image"] ?>" class="w-80 h-96 md:w-80 md:h-96 mt-20">
+    <div class='block md:flex px-20 text-white gap-7'>
+        <img src="../../assets/movie_image/<?= $shows[0]["image"] ?>" class="w-fit h-80 mt-20">
         <div class="mt-10 md:mt-20 flex flex-col gap-3">
             <h1 class="font-bold text-5xl mb-7"><?= $shows[0]['movie_name'] ?></h1>
             <div class="flex items-center">
@@ -46,7 +46,7 @@ if (isset($_COOKIE['username'])) {
             <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login ? "hidden" : "" ?>"><a href="<?= $url ?>">Buy Ticket</a></button>
         </div>
     </div>
-    <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-20 my-auto grid gap-3 <?= $is_login ? "" : 'hidden' ?>" enctype="multipart/form-data">
+    <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-32 mt-20 grid gap-3 <?= $is_login ? "" : 'hidden' ?>" enctype="multipart/form-data">
         <h1 class="text-2xl text-white font-bold text-center mb-4">Buy Ticket</h1>
         <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
         <input type="hidden" value="<?= $shows[0]['movie_name'] ?>" id="movie_name" name="movie_name">
