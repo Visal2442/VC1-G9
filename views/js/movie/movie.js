@@ -31,7 +31,7 @@ $(document).ready(function () {
           } else if (data == "This movie is already exists") {
             alert(data);
           } else if (data == "Error pattern") {
-            alert("Inpu t does not match the pattern");
+            alert("Input does not match the pattern");
           } else {
             alert("Input cannot be empty!");
           }
