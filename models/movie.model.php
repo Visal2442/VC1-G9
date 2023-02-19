@@ -3,7 +3,7 @@
 function getAllMovies(): array
 {
     global $connection;
-    $statement = $connection->prepare('select * from movies order by release_date desc');
+    $statement = $connection->prepare('select * from movies order by movie_id desc');
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }

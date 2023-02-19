@@ -34,7 +34,7 @@ function getBookingByCusEmail(string $email): array
                                         inner join shows on shows.show_id = booking.show_id
                                         inner join movies on movies.movie_id = shows.movie_id
                                         inner join venues on venues.venue_id = shows.venue_id
-                                        where users.email_address = :email_address ');
+                                        where users.email_address = :email_address order by booking.booking_id desc');
     $statement ->execute([
         ":email_address" => $email
     ]);

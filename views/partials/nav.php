@@ -23,7 +23,7 @@ if (isset($_COOKIE['username'])) {
                     <a href="/" class="<?= urlIs('/') ? "text-yellow-400" : "text-white " ?> text-lg hover:text-yellow-600 sm:my-6">Home</a>
                 </li>
                 <li class="nav-item p-2 md:ml-5">
-                    <a href="/print" class="<?= urlIs('/contact') ? "text-yellow-400" : "text-white " ?> text-lg hover:text-yellow-600 sm:my-6">About Us</a>
+                    <a href="#" class="<?= urlIs('/contact') ? "text-yellow-400" : "text-white " ?> text-lg hover:text-yellow-600 sm:my-6">About Us</a>
                 </li>
                 <li class="nav-item p-2 md:ml-5">
                     <a href="#" class="<?= urlIs('/about') ? "text-yellow-400" : "text-white " ?> text-lg hover:text-yellow-600 sm:my-6">Contact Us</a>

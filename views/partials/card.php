@@ -15,7 +15,7 @@
             ?>
                 <div class="flex flex-col justify-center mb-10">
                     <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-                        <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image object-cover transition-all duration-500">
+                        <img src="../../assets/movie_image/<?= $show['image']; ?>" class="card-image w-fit transition-all duration-500">
                         <div class=" absolute -inset-96 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 ">
                         </div>
                         <div class=" absolute inset-0 flex flex-col items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-500">
