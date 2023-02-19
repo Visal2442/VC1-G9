@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 07, 2023 at 10:27 AM
+-- Generation Time: Feb 19, 2023 at 04:06 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -29,10 +29,31 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `movie_id` int(11) NOT NULL,
-  `booking_date` date NOT NULL
+  `email_address` varchar(100) NOT NULL,
+  `show_id` int(11) NOT NULL,
+  `booking_date` varchar(100) NOT NULL,
+  `seat_number` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `email_address`, `show_id`, `booking_date`, `seat_number`) VALUES
+(63, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'G11'),
+(64, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'H12'),
+(65, 'dembo4ddd45@gmail.com', 19, '24 Feb 2023', 'J12'),
+(66, 'dembo4ddd45@gmail.com', 19, '25 Feb 2023', 'E12'),
+(67, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'H11'),
+(75, 'dembo44dddsdsd5@gmail.com', 32, '20 Feb 2023', 'J4'),
+(76, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'J11'),
+(77, 'dembo4ddd45@gmail.com', 19, '27 Feb 2023', 'I12'),
+(78, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'G12'),
+(79, 'dembo4ddd45@gmail.com', 19, '27 Feb 2023', 'I10'),
+(80, 'dembo4ddd45@gmail.com', 19, '20 Feb 2023', 'E11'),
+(81, 'dembo4ddd45@gmail.com', 32, '22 Feb 2023', 'F12'),
+(82, 'dembo4ddd45@gmail.com', 32, '22 Feb 2023', 'F11'),
+(83, 'dembo4ddd45@gmail.com', 32, '22 Feb 2023', 'E11');
 
 -- --------------------------------------------------------
 
@@ -50,19 +71,12 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `email_address`) VALUES
+(64, 'dembo445121121@gmail.com'),
 (59, 'dembo4451@gmail.com'),
-(62, 'dembo4ddd45@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dates_format`
---
-
-CREATE TABLE `dates_format` (
-  `date_id` int(11) NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(66, 'dembo44522222@gmail.com'),
+(65, 'dembo44dddsdsd5@gmail.com'),
+(62, 'dembo4ddd45@gmail.com'),
+(63, 'dembo55555@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -76,9 +90,9 @@ CREATE TABLE `movies` (
   `genre` varchar(100) NOT NULL,
   `subtitle` varchar(100) NOT NULL,
   `description` varchar(500) NOT NULL,
-  `release_date` date NOT NULL,
+  `release_date` varchar(100) NOT NULL,
   `duration` varchar(30) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `image` varchar(1000) NOT NULL,
   `trailer` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -87,7 +101,17 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movie_id`, `movie_name`, `genre`, `subtitle`, `description`, `release_date`, `duration`, `image`, `trailer`) VALUES
-(25, 'LOKI', 'Action', 'English', 'LOKI LOKI LOKI LOKI', '2023-02-16', '1h30mn', 'https://img.vxdn.net/t-max/w_200/h_300/loki-season-1-1622988489.jpg', 'src=\"https://www.youtube.com/embed/nW948Va-l10\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen');
+(29, 'MEGAN', 'Action', 'English', 'MEGAN', '10 Feb 2023', '1h40mn', 'IMG-63e766ce602c74.44437838.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/BRb4U99OU80\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(30, 'Smile', 'Horror', 'English', 'Smile forever', '20 Feb 2023', '1h20mn', 'IMG-63ebc1ab34c827.59693393.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/BcDK7lkzzsU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(31, 'Black Adam', 'Fantasy', 'English', 'Black Adam is the Rock.', '13 Feb 2023', '2h04mn', 'IMG-63e793bb85f1d6.45192867.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/X0tOpBuYasI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(39, 'John Wick: 3', 'Action', 'English', 'John Wick is the boogyman', '28 Feb 2023', '1h30mn', 'john-wick-chapter-3-parabellum-28606.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/M7XM597XO94\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(40, 'Ms Marvel', 'Adventure', 'English', 'Ms Marvel', '8 Feb 2023', '1h30mn', 'ms-marvel-season-1-1630853522.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/m9EX0f6V11Y\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(41, 'Jigsaw', 'Horror', 'English', 'Jis Saw', '21 Feb 2023', '2h30mn', 'jigsaw-22505.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/j9_RPSo22A8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(42, 'Fantastic Beast', 'Fantasy', 'English', 'Fantastic Beast', '15 Feb 2023', '2h30mn', 'fantastic-beasts-the-secrets-of-dumbledore-1630853188.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Y9dr2zw-TXQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(43, 'Scrooge', 'Comedy', 'English', 'Scrooge', '8 Feb 2023', '1h40mn', 'scrooge-a-christmas-carol-1630854525.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/tZylTiyaWV8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(44, 'Night Owl', 'Fantasy', 'English', 'Night Owl', '11 Feb 2023', '2h00mn', 'the-night-owl-1630854749.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/m0UcNOeKzt0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(45, 'Ant Man and The Wash', 'Adventure', 'English', 'Ant Man and The Wash', '20 Feb 2023', '2h40mn', 'ant-man-and-the-wasp-quantumania-1630854867.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ZlNFpri-Y40\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>'),
+(46, 'Knock At The Cabin', 'Mystery', 'English', 'Knock at the cabin', '25 Feb 2023', '1h40mn', 'knock-at-the-cabin-1630854824.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/gv_QhoUy-xc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>');
 
 -- --------------------------------------------------------
 
@@ -105,7 +129,8 @@ CREATE TABLE `sellers` (
 --
 
 INSERT INTO `sellers` (`seller_id`, `email_address`) VALUES
-(1, 'dembo4451@gmail.com');
+(1, 'dembo4451@gmail.com'),
+(2, 'lina123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -117,23 +142,27 @@ CREATE TABLE `shows` (
   `show_id` int(11) NOT NULL,
   `movie_id` int(11) NOT NULL,
   `venue_id` int(11) NOT NULL,
-  `date_id` int(11) NOT NULL,
-  `time_id` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `time` varchar(30) NOT NULL,
   `amount_ticket` int(11) NOT NULL,
   `price_per_ticket` int(11) NOT NULL,
   `hall` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `times_format`
+-- Dumping data for table `shows`
 --
 
-CREATE TABLE `times_format` (
-  `time_id` int(11) NOT NULL,
-  `time` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `shows` (`show_id`, `movie_id`, `venue_id`, `date`, `time`, `amount_ticket`, `price_per_ticket`, `hall`) VALUES
+(19, 29, 55, '23 Feb 2023', '09:00', 120, 200, 'Hall 1'),
+(32, 39, 55, '19 Feb 2023', '12:00', 120, 100, 'Hall 1'),
+(34, 40, 63, '22 Feb 2023', '22:00', 120, 300, 'Hall 2'),
+(35, 42, 78, '23 Feb 2023', '09:00', 120, 200, 'Hall 3'),
+(36, 43, 63, '22 Feb 2023', '21:00', 100, 200, 'Hall 5'),
+(37, 44, 55, '24 Feb 2023', '10:00', 120, 50, 'Hall 3'),
+(38, 45, 63, '25 Feb 2023', '12:00', 120, 300, 'Hall 3'),
+(39, 41, 63, '27 Feb 2023', '13:00', 120, 100, 'Hall 2'),
+(40, 46, 63, '23 Feb 2023', '23:00', 120, 100, 'Hall 4');
 
 -- --------------------------------------------------------
 
@@ -155,8 +184,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email_address`, `username`, `password`, `date_of_birth`, `address`, `role`) VALUES
+('dembo445121121@gmail.com', 'visal2442', '$2y$10$WARhwUCSJeWG78ne.eZHD.RFbLGlvpSt8ThQOAkIKTxeBDG46nfgu', '2023-02-24', 'Phnom Penhdd', 0),
 ('dembo4451@gmail.com', 'visal2442', '$2y$10$mo53ghnb9x5altptVQgkoOgVIzy1uMztlhbEzS4gLR37uLKYfMiAa', '2005-02-09', 'Phnom Penh', 1),
-('dembo4ddd45@gmail.com', 'visal2442', '$2y$10$A9pWlPuFH8QUcGiPNyW44Ogl15szfE/OZgbU9XuPmxxe5.QuKqnde', '2023-02-10', 'Phnom Penh', 0);
+('dembo44522222@gmail.com', 'visal2442', '$2y$10$Kgo1UKm2MsPJveQsLSQZJutMC9GPBZW8VIJzF14LK6mh/d/hyLtEy', '2023-02-15', 'Phnom Penhw', 0),
+('dembo44dddsdsd5@gmail.com', 'visal2442', '$2y$10$Z.bCuEi82lViE63YA.ICX.sugHqBPsp8zXvbX1utiMvE/frnQ5.r.', '2023-02-17', 'Phnom Penhdd', 0),
+('dembo4ddd45@gmail.com', 'visal2442', '$2y$10$A9pWlPuFH8QUcGiPNyW44Ogl15szfE/OZgbU9XuPmxxe5.QuKqnde', '2023-02-10', 'Phnom Penh', 0),
+('dembo55555@gmail.com', 'visal2442', '$2y$10$WLWT5Qxn44hXVhBTafWCZuCCFQnfRPU0.uKw8D52wX6EjTv6CqTMS', '2023-02-16', 'Phnom Penh', 0),
+('lina123@gmail.com', 'visal2442', '123456789', '2023-02-16', 'PP', 1);
 
 -- --------------------------------------------------------
 
@@ -175,10 +209,9 @@ CREATE TABLE `venues` (
 --
 
 INSERT INTO `venues` (`venue_id`, `venue_name`, `location`) VALUES
-(55, 'Major', 'Phnom Penh'),
-(63, 'Legend', 'Phnom Penh'),
-(68, 'Zodiac', 'BattamBang'),
-(70, 'bbbbb', 'bbbb');
+(55, 'Cinema PP', 'Phnom Penh'),
+(63, 'Cinema BTB', 'Battambang'),
+(78, 'Cinema SR', 'Siem Reap');
 
 --
 -- Indexes for dumped tables
@@ -189,8 +222,8 @@ INSERT INTO `venues` (`venue_id`, `venue_name`, `location`) VALUES
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `cus_if` (`customer_id`),
-  ADD KEY `movie_id` (`movie_id`);
+  ADD KEY `show_fk` (`show_id`),
+  ADD KEY `email_fk` (`email_address`);
 
 --
 -- Indexes for table `customers`
@@ -198,12 +231,6 @@ ALTER TABLE `booking`
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
   ADD KEY `email_address` (`email_address`);
-
---
--- Indexes for table `dates_format`
---
-ALTER TABLE `dates_format`
-  ADD PRIMARY KEY (`date_id`);
 
 --
 -- Indexes for table `movies`
@@ -224,15 +251,7 @@ ALTER TABLE `sellers`
 ALTER TABLE `shows`
   ADD PRIMARY KEY (`show_id`),
   ADD KEY `movie_fk` (`movie_id`),
-  ADD KEY `venue_fk` (`venue_id`),
-  ADD KEY `date_fk` (`date_id`),
-  ADD KEY `time_fk` (`time_id`);
-
---
--- Indexes for table `times_format`
---
-ALTER TABLE `times_format`
-  ADD PRIMARY KEY (`time_id`);
+  ADD KEY `venue_fk` (`venue_id`);
 
 --
 -- Indexes for table `users`
@@ -254,49 +273,37 @@ ALTER TABLE `venues`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
-
---
--- AUTO_INCREMENT for table `dates_format`
---
-ALTER TABLE `dates_format`
-  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `times_format`
---
-ALTER TABLE `times_format`
-  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `venues`
 --
 ALTER TABLE `venues`
-  MODIFY `venue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `venue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- Constraints for dumped tables
@@ -306,8 +313,8 @@ ALTER TABLE `venues`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `cus_if` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `movie_id` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `email_fk` FOREIGN KEY (`email_address`) REFERENCES `users` (`email_address`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `show_fk` FOREIGN KEY (`show_id`) REFERENCES `shows` (`show_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `customers`
@@ -325,9 +332,7 @@ ALTER TABLE `sellers`
 -- Constraints for table `shows`
 --
 ALTER TABLE `shows`
-  ADD CONSTRAINT `date_fk` FOREIGN KEY (`date_id`) REFERENCES `dates_format` (`date_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `movie_fk` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `time_fk` FOREIGN KEY (`time_id`) REFERENCES `times_format` (`time_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `venue_fk` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

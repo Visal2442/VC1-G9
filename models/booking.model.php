@@ -1,5 +1,5 @@
 <?php
-//add booking
+//===== add booking =====
 function addBooking(string $customer_email, int $show_id, string $booking_date, string $seat_number) :bool
 {
     global $connection;
@@ -12,7 +12,7 @@ function addBooking(string $customer_email, int $show_id, string $booking_date, 
     ]);
     return $statement->rowCount() > 0;
 }
-// Get seat 
+// ===== Get seat =====
 function getSeatBooked($show_id): array
 {
     global $connection;
@@ -34,9 +34,21 @@ function getBookingByCusEmail(string $email): array
                                         inner join shows on shows.show_id = booking.show_id
                                         inner join movies on movies.movie_id = shows.movie_id
                                         inner join venues on venues.venue_id = shows.venue_id
-                                        where users.email_address = :email_address ');
+                                        where users.email_address = :email_address order by booking.booking_id desc');
     $statement ->execute([
         ":email_address" => $email
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+// ===== Get booking by show_id =====
+function getBookingByShowId(int $show_id): array 
+{
+    global $connection;
+    $statement = $connection -> prepare('select booking.*, shows.date from booking
+                                        inner join shows on shows.show_id = booking.show_id 
+                                        where shows.show_id = :show_id');
+    $statement->execute([
+        ":show_id" => $show_id
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }

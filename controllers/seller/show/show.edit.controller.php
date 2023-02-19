@@ -63,7 +63,7 @@ if (isset($_POST["show_id"])) {
         </div>
         <div class="w-full px-3 mb-3">
             <label for="amount_of_ticket_edit" class="text-black px-1 font-medium text-blak-500">Amount Of Ticket</label>
-            <input type="number" name="amount_of_ticket_edit" id="amount_of_ticket_edit" value="<?= $show['amount_ticket'] ?>" min="1" placeholder="Amount of ticket for this show" class="bg-gray-50 border rounded border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 outline-0">
+            <input type="number" name="amount_of_ticket_edit" id="amount_of_ticket_edit" min=1 value="<?= $show['amount_ticket'] ?>" placeholder="Amount of ticket for this show" class="bg-gray-50 border rounded border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 outline-0">
         </div>
         <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end ml-10  border-gray-200 rounded-b-md ">
             <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">CANCEL</button>

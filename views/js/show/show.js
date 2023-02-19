@@ -28,7 +28,7 @@ $(document).ready(function ()
           displayShow();
         }
         else{
-          alert(data);
+          alert("Please check your input");
         }
       },
     });
@@ -109,9 +109,15 @@ function deleteShow(show_id, show_modal)
     data: {
       show_id: show_id,
     },
-    success: function () {
-      $(show_modal).modal("hide");
-      displayShow();
+    success: function (data) {
+      if(data == "success"){
+        $(show_modal).modal("hide");
+        displayShow();
+      }
+      else{
+        $(show_modal).modal("hide");
+        alert(data);
+      }
     },
   });
 }
