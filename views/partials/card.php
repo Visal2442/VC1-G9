@@ -1,15 +1,17 @@
-<ul class="nav nav-tabs flex flex-row  w-4/5 md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 mt-5 mx-auto gap-10" id="tabs-tab">
-    <li class="nav-item">
-        <a href="" class="link block text-sm font-bold text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 auto leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 active" data-bs-toggle="pill" data-bs-target="#All" autofocus>All GENRE</a>
+<ul class="nav nav-tabs flex flex-row w-4/5 md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 mt-5 mx-auto gap-10" role="tablist" data-te-nav-ref>
+    <li role="presentation">
+        <a href="#tabs-home" class="data-[te-nav-active]:border-warning data-[te-nav-active]:text-warning focus:border-transparen my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#All" data-te-nav-active role="tab" aria-controls="All" aria-selected="true">ALL GENRE</a>
     </li>
     <?php for ($i = 1; $i < count($genres); $i++) : ?>
-        <li class="nav-item">
-            <a href="" class="link block text-sm font-bold text-white uppercase focus:text-yellow-400 focus:border-yellow-400 focus:border-b-2 auto leading-tight px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100" data-bs-toggle="pill" data-bs-target="<?= '#' . $genres[$i] ?>"><?= $genres[$i] ?></a>
+        <li role="presentation">
+            <a href="#tabs-profile" class="data-[te-nav-active]:border-warning data-[te-nav-active]:text-warning focus:border-transparen my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-7 pt-4 pb-3.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="<?= '#' . $genres[$i] ?>" role="tab" aria-controls="<?= $genres[$i] ?>" aria-selected="false"><?= $genres[$i] ?></a>
         </li>
     <?php endfor; ?>
 </ul>
-<div class="tab-content w-4/5 m-auto">
-    <div class="tab-pane fade show active" id="All">
+
+<div class="w-4/5 m-auto">
+    <!-- All Genres  -->
+    <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="All" role="tabpanel" data-te-tab-active>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-6">
             <?php foreach ($shows as $show) :
             ?>
@@ -46,11 +48,12 @@
             ?>
         </div>
     </div>
-    <?php for ($i=1;$i<count($genres);$i++) : ?>
-        <div class="tab-pane fade show" id="<?= $genres[$i] ?>">
+    <!-- Each Genre  -->
+    <?php for ($i = 1; $i < count($genres); $i++) : ?>
+        <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="<?= $genres[$i] ?>">
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-6">
                 <?php foreach ($shows as $show) :
-                    if (strtolower($show['genre']) === strtolower($genres[$i]) && strtolower($show['genre']) != null ) :
+                    if (strtolower($show['genre']) == strtolower($genres[$i]) && strtolower($show['genre']) != null) :
                 ?>
                         <div class="flex flex-col justify-center mb-10">
                             <div class="group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">

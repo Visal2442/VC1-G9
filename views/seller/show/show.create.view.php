@@ -1,10 +1,10 @@
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="createShow" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
-        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding  rounded outline-none text-current">
-            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-                <h5 class="text-xl font-medium leading-normal text-gray-800">ADD SHOW</h5>
+<div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="createShow" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true">
+    <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px]">
+        <div class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+            <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                <h5 class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">ADD SHOW</h5>
             </div>
-            <div class="modal-body p-4">
+            <div class="relative p-4">
                 <form action="" method="post" id="create_show_form" class="mb-5">
                     <div class="flex w-full mb-4">
                         <div class="w-full px-3 mb-3">
@@ -56,7 +56,7 @@
                         <input type="number" name="amount_of_ticket" id="amount_of_ticket" min="1" placeholder="Amount of ticket for this show" class="bg-gray-50 border rounded border-gray-300 text-gray-900 sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-blue-500 outline-0">
                     </div>
                     <div class="modal-footer flex items-center justify-end px-3 border-gray-200 rounded-b-md w-full">
-                        <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-te-modal-dismiss>CANCEL</button>
                         <button type="submit" name="submit" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">ADD</button>
                     </div>
                 </form>

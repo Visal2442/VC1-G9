@@ -1,6 +1,6 @@
 </body>
-<footer class="text-center bg-gray-900 text-white mt-5">
-    <div class="container block pl-10 md:flex justify-around items-center md:pt-10 md:pb-5">
+<footer class="flex flex-col bg-gray-900 text-white mt-5">
+    <div class="container pl-10 flex justify-between items-center md:pt-10 md:pb-5">
         <div class="text-left">
             <h1 class="font-bold text-2xl text-white mb-3">Contact us</h1>
             <div class="flex items-center text-center md:text-left">
@@ -12,7 +12,7 @@
                 <p class="text-white ml-5">+855 67 340 156</p>
             </div>
         </div>
-        <div class="flex gap-4 md:gap-0 my-10 justify-start md:justify-center">
+        <div class="flex gap-4 md:gap-0 my-10 md:justify-center">
             <a href="#!" type="button" class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="w-2 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                     <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
@@ -47,16 +47,16 @@
         <div class="text-left">
             <h1 class="font-bold text-2xl text-white mb-1">Location</h1>
             <p class="text-white">BP 511, Phum Tropeang Chhuk (Borey Sorla) <br> Sangtak, Street 371, Phnom Penh.</p>
-            <iframe class="w-auto h-20 sm:m-1" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15636.055632678006!2d104.8830836!3d11.5508598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x171e0b69c7c6f7ba!2sPasserelles%20num%C3%A9riques%20Cambodia%20(PNC)!5e0!3m2!1sen!2skh!4v1674529438322!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="w-auto h-20" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15636.055632678006!2d104.8830836!3d11.5508598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x171e0b69c7c6f7ba!2sPasserelles%20num%C3%A9riques%20Cambodia%20(PNC)!5e0!3m2!1sen!2skh!4v1674529438322!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center py-4" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2023 Copyright:
-        <a class="text-whitehite" href="https://tailwind-elements.com/">Cenima Booking Ticket</a>
+        <a class="text-white" href="https://tailwind-elements.com/">Cenima Booking Ticket</a>
     </div>
 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>  <!--Tailwind element script -->
 <script src="views/js/main.js"></script>
 </body>
 

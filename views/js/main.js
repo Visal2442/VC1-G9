@@ -10,3 +10,20 @@ function printTicket(ticket) {
     window.saveAs(blob, "ticket.png");
   });
 }
+
+ // Edit Profile
+ $("#edit-file").on("change", function (e) {
+  e.preventDefault();
+  // let form_data = new FormData(this);
+    $.ajax({
+      url: "controllers/profile/profile.controller.php",
+      method: "post",
+      data: $(this).val(),
+      // data: form_data,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+       console.log(data);
+      }
+  });
+});

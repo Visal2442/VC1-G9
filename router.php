@@ -11,13 +11,15 @@ $routes = [
     '/profile' => 'controllers/profile/profile.controller.php',
     '/seller' => 'controllers/seller/seller.controller.php',
     '/cart'=> 'controllers/cart/cart.controller.php',
+    '/cart'=> 'controllers/cart/cart.controller.php',
+    '/error'=> 'views/errors/404.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
     require $routes[$uri];
 } else {
    http_response_code(404);
-   require 'views/errors/404.php';
+   require $routes['/error'];
    die();
 }
 

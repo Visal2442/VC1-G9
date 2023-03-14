@@ -11,7 +11,6 @@ $(document).ready(function () {
   $("#showing_date").on("change", function () 
   {
     reset();
-    // $("#form_booking")[0].reset();
     let showing_date = this.value;
     $("#show_d").text($(this).find("option:selected").text()); //For display
     $("#show_date").val($(this).val());

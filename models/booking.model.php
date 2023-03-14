@@ -52,3 +52,12 @@ function getBookingByShowId(int $show_id): array
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+// ======= Get all bookings ====
+function getAllBookings(): array
+{
+    global $connection;
+    $statement = $connection -> prepare('select * from booking 
+                                        inner join shows on shows.show_id = booking.show_id');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

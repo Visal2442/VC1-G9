@@ -43,25 +43,34 @@ if (isset($_COOKIE['username'])) {
                 <p class="font-semibold hidden md:block text-lg text-gray-300">Description</p>
                 <p>: <?= $shows[0]['description'] ?></p>
             </div>
-            <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="login">
-                <div class="modal-dialog relative w-auto pointer-events-none">
-                    <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding  rounded outline-none text-current">
-                        <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-                            <h5 class="text-xl font-medium leading-normal text-red-500">WARNING !</h5>
+
+            <!-- Modal -->
+            <div data-te-modal-init class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div data-te-modal-dialog-ref class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+                    <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                            <h5 class="text-xl font-medium leading-normal text-red-500 dark:text-neutral-200" id="exampleModalLabel"> WARNING ! </h5>
+                            <button type="button" class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
                         </div>
-                        <div class="modal-body p-4">
+                        <div class="relative flex-auto p-4" data-te-modal-body-ref>
                             <p class="text-black">You don't have an account yet!</p>
                         </div>
-                        <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                            <button type="button" class="px-6  py-2.5 bg-gray-50 text-black font-medium text-xs leading-tight uppercase rounded transition duration-150 ease-in-out" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded transition duration-150 ease-in-out ml-1"><a href="<?= $url ?>"> log in</a></button>
+                        <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                            <button type="button" class="inline-block rounded bg-gray-50 text-black px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">Close </button>
+                            <button type="button" class="ml-1 inline-block rounded bg-blue-600 text-white  px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" data-te-ripple-init data-te-ripple-color="light"><a href="<?= $url ?>"> log in</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="button" class="bg-yellow-400 hover:bg-yellow-500 rounded w-36 p-1 text-black hover:text-white mt-2 <?= $is_login ? "hidden" : "" ?>" data-bs-toggle="modal" data-bs-target="#login">Buy Ticket</a></button>
+            <button type="button" class="inline-block bg-yellow-400 hover:bg-yellow-500 rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-black hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] <?= $is_login ? "hidden" : "" ?> " data-te-toggle="modal" data-te-target="#exampleModal" data-te-ripple-init data-te-ripple-color="light"> Buy Ticket</button>
         </div>
     </div>
+
+<!-- ===== Form to select show date =====  -->
     <form action="" method="post" id="booking_form" class="bg-slate-700 p-5 text-white w-4/12 mr-32 mt-20 grid gap-3 <?= $is_login ? "" : 'hidden' ?>" enctype="multipart/form-data">
         <h1 class="text-2xl text-white font-bold text-center mb-4">Buy Ticket</h1>
         <input type="hidden" id="movie_id" name="movie_id" value="<?= $id  ?>">
